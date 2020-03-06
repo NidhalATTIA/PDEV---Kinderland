@@ -1,0 +1,103 @@
+package tn.esprit.spring.entity;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class User implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long IdUser;
+
+	@Column(name = "firstName")
+	private String FirstName;
+
+	@Column(name = "LastName")
+	private String LastName;
+
+	/*
+	 * @Enumerated(EnumType.STRING) Role role;
+	 */
+
+	@Column(name = "Phone")
+	private int Phone;
+
+	@Column(name = "Mail")
+	private String Mail;
+
+	@Column(name = "BirthDate")
+	private String BDate;
+
+	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
+
+	public long getIdUser() {
+		return IdUser;
+	}
+
+	public void setIdUser(long idUser) {
+		this.IdUser = idUser;
+	}
+
+	public String getFirstName() {
+		return FirstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.FirstName = firstName;
+	}
+
+	public String getLastName() {
+		return LastName;
+	}
+
+	public void setLastName(String lastName) {
+		LastName = lastName;
+	}
+
+	public int getPhone() {
+		return Phone;
+	}
+
+	public void setPhone(int phone) {
+		Phone = phone;
+	}
+
+	public String getMail() {
+		return Mail;
+	}
+
+	public void setMail(String mail) {
+		Mail = mail;
+	}
+
+	public String getBDate() {
+		return BDate;
+	}
+
+	public void setBDate(String bDate) {
+		BDate = bDate;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+// ---------------------------------------------------- ToString ---------------------------------------------------------------
+
+	@Override
+	public String toString() {
+		return "User [idUser=" + IdUser + ", firstName=" + FirstName + ", LastName=" + LastName + ", Phone=" + Phone
+				+ ", Mail=" + Mail + ", BDate=" + BDate + "]";
+	}
+
+}
