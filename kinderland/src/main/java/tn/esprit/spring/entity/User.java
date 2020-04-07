@@ -40,6 +40,10 @@ public class User implements Serializable {
 	private String BDate;
 	@Column(name = "Etat")
 	private String Etat;
+	
+	//@JsonBackReference
+		@OneToOne
+			private Admin Admin;
 
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
 
@@ -110,7 +114,5 @@ public class User implements Serializable {
 		return "User [idUser=" + IdUser + ", firstName=" + FirstName + ", LastName=" + LastName + ", Phone=" + Phone
 				+ ", Mail=" + Mail + ", BDate=" + BDate + "]";
 	}
-	//@JsonBackReference
-	@OneToOne
-		private Admin Admin;
+	
 }
