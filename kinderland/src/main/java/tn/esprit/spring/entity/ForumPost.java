@@ -2,12 +2,15 @@ package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -37,6 +40,12 @@ public class ForumPost implements Serializable {
 	
 	@Column(name = "Pinned")
 	private Boolean Pinned;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	User user;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	private Set<ForumPostComment> forumPostComment;
 
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------
 	

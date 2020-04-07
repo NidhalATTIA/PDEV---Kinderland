@@ -1,11 +1,15 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -51,6 +55,9 @@ public class User implements Serializable {
 	
 	@OneToOne
 	private Teacher teacher;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<ForumPost> forumPost;
 
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
 
