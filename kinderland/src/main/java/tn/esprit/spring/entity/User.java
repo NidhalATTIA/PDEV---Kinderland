@@ -56,6 +56,12 @@ public class User implements Serializable {
 	@OneToOne
 	private Teacher teacher;
 	
+	@OneToOne
+	private Parent parent;
+	
+	@OneToOne
+	private Nurse nurse;
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<ForumPost> forumPost;
 

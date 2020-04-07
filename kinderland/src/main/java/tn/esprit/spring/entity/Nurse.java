@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,26 +19,39 @@ public class Nurse  implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int idNurse;
 
-	public Nurse(int id) {
-		
-		this.id = id;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 	
 	//@JsonBackReference
-	@OneToOne(mappedBy="Admin")
-	private User user; 
+	@OneToOne(mappedBy="nurse")
+	private User user;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	private Set<Blog> blog;
+
+	public int getIdNurse() {
+		return idNurse;
+	}
+
+
+	public void setIdNurse(int idNurse) {
+		this.idNurse = idNurse;
+	}
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+	
+	
 }
-
