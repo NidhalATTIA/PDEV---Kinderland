@@ -44,7 +44,8 @@ public class User implements Serializable {
 	//@JsonBackReference
 		@OneToOne
 			private Admin Admin;
-
+		@OneToOne
+		private Nurse Nurse;
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
 
 	public String getEtat() {
