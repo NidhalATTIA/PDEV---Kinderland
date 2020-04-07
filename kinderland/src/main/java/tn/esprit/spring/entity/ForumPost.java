@@ -28,13 +28,15 @@ public class ForumPost implements Serializable {
 	@Column(name = "DatePost")
 	private Date DatePost;
 
-	
 
 	@Column(name = "TextPost")
 	private String TextPost;
 
 	@Column(name = "ImagePost")
 	private String ImagePost;
+	
+	@Column(name = "Pinned")
+	private Boolean Pinned;
 
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------
 	
@@ -91,13 +93,23 @@ public class ForumPost implements Serializable {
 		return serialVersionUID;
 	}
 
+	public Boolean getPinned() {
+		return Pinned;
+	}
+
+	public void setPinned(Boolean pinned) {
+		Pinned = pinned;
+	}
+
+
+
 // ---------------------------------------------------- ToString ---------------------------------------------------------------
 
-	
 	@Override
 	public String toString() {
-		return "Post [IdPost=" + IdPost + ", IdUser=" + IdUser + ", TitlePost=" + TitlePost + ", DatePost=" + DatePost
-				+ ", TextPost=" + TextPost + ", ImagePost=" + ImagePost + "]";
+		return "ForumPost [IdPost=" + IdPost + ", IdUser=" + IdUser + ", TitlePost=" + TitlePost + ", DatePost="
+				+ DatePost + ", TextPost=" + TextPost + ", ImagePost=" + ImagePost + ", Pinned=" + Pinned + "]";
 	}
+	
 
 }
