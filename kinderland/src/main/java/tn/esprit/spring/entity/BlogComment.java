@@ -2,7 +2,9 @@ package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,6 +30,9 @@ public class BlogComment implements Serializable {
 	
 	@Column(name = "DateComment")
 	private Date DatePost;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	private Set<Blog> blog;
 	
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------	
 
@@ -67,8 +72,19 @@ public class BlogComment implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	public Set<Blog> getBlog() {
+		return blog;
+	}
 
+	public void setBlog(Set<Blog> blog) {
+		this.blog = blog;
+	}
+	
+	
 	// ---------------------------------------------------- ToString ---------------------------------------------------------------
+
+	
 
 	@Override
 	public String toString() {
