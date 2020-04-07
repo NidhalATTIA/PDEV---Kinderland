@@ -17163,6 +17163,7 @@ Unconditional classes:
 2020-04-07 18:28:33.762 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@4487c0c2: (connection evicted)
 2020-04-07 18:28:33.765 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@55d5801b: (connection evicted)
 2020-04-07 18:28:33.765 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@14e88a20: (connection evicted)
+2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@25b61949: (connection evicted)
 2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@74c7756f: (connection evicted)
 2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@694078a4: (connection evicted)
 2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@7089ed19: (connection evicted)
