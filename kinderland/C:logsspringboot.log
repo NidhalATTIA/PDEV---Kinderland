@@ -17111,3 +17111,63 @@ Unconditional classes:
 2020-04-07 18:26:22.024 DEBUG 7615 --- [Catalina-utility-2] org.apache.catalina.session.ManagerBase  : End expire sessions StandardManager processingTime 1 expired sessions: 0
 2020-04-07 18:26:22.645 DEBUG 7615 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
 2020-04-07 18:26:52.650 DEBUG 7615 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2020-04-07 18:27:22.045 DEBUG 7615 --- [Catalina-utility-2] org.apache.catalina.session.ManagerBase  : Start expire sessions StandardManager at 1586280442045 sessioncount 0
+2020-04-07 18:27:22.046 DEBUG 7615 --- [Catalina-utility-2] org.apache.catalina.session.ManagerBase  : End expire sessions StandardManager processingTime 0 expired sessions: 0
+2020-04-07 18:27:22.653 DEBUG 7615 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2020-04-07 18:27:52.658 DEBUG 7615 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2020-04-07 18:28:22.074 DEBUG 7615 --- [Catalina-utility-1] org.apache.catalina.session.ManagerBase  : Start expire sessions StandardManager at 1586280502074 sessioncount 0
+2020-04-07 18:28:22.075 DEBUG 7615 --- [Catalina-utility-1] org.apache.catalina.session.ManagerBase  : End expire sessions StandardManager processingTime 1 expired sessions: 0
+2020-04-07 18:28:22.663 DEBUG 7615 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2020-04-07 18:28:33.701 DEBUG 7615 --- [RMI TCP Connection(1)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(1)-127.0.0.1: accepted socket from [127.0.0.1:51999]
+2020-04-07 18:28:33.702 DEBUG 7615 --- [RMI TCP Connection(1)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(1)-127.0.0.1: (port 51957) op = 80
+2020-04-07 18:28:33.720 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: accepted socket from [127.0.0.1:52000]
+2020-04-07 18:28:33.723 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 80
+2020-04-07 18:28:33.723 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "[Ljava.rmi.server.ObjID;", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.725 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "java.rmi.server.ObjID", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.725 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "java.rmi.server.UID", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.726 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "java.rmi.dgc.Lease", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.727 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "java.rmi.dgc.VMID", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.727 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "[B", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.734 DEBUG 7615 --- [RMI TCP Connection(1)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(1)-127.0.0.1: (port 51957) op = 82
+2020-04-07 18:28:33.734 DEBUG 7615 --- [RMI TCP Connection(1)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(1)-127.0.0.1: (port 51957) op = 84
+2020-04-07 18:28:33.737 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 82
+2020-04-07 18:28:33.737 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 80
+2020-04-07 18:28:33.744 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 82
+2020-04-07 18:28:33.744 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 80
+2020-04-07 18:28:33.744 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "[Ljava.rmi.server.ObjID;", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.744 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "java.rmi.server.ObjID", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.745 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "java.rmi.server.UID", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.745 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "java.rmi.dgc.Lease", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.745 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "java.rmi.dgc.VMID", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.745 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "[B", codebase = "", defaultLoader = sun.misc.Launcher$ExtClassLoader@16b3fc9e
+2020-04-07 18:28:33.746 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 82
+2020-04-07 18:28:33.746 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 84
+2020-04-07 18:28:33.748 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 80
+2020-04-07 18:28:33.751 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 82
+2020-04-07 18:28:33.753 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-127.0.0.1: (port 51958) op = 80
+2020-04-07 18:28:33.753 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "javax.management.ObjectName", codebase = ""
+2020-04-07 18:28:33.754 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] sun.rmi.loader                           : RMI TCP Connection(2)-127.0.0.1: name = "java.rmi.MarshalledObject", codebase = ""
+2020-04-07 18:28:33.756  INFO 7615 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-04-07 18:28:33.756 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@353d0772, started on Tue Apr 07 18:23:20 CET 2020
+2020-04-07 18:28:33.756 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.e.PropertySourcesPropertyResolver  : Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+2020-04-07 18:28:33.757  INFO 7615 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-07 18:28:33.758  INFO 7615 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-07 18:28:33.759 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] o.hibernate.internal.SessionFactoryImpl  : HHH000031: Closing
+2020-04-07 18:28:33.759 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] o.h.type.spi.TypeConfiguration$Scope     : Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@4a2042a] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@77ab22be]
+2020-04-07 18:28:33.760 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] o.h.s.i.AbstractServiceRegistryImpl      : Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2020-04-07 18:28:33.760 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] o.h.b.r.i.BootstrapServiceRegistryImpl   : Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2020-04-07 18:28:33.760 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2020-04-07 18:28:33.761 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2020-04-07 18:28:33.761  INFO 7615 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-07 18:28:33.761 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+2020-04-07 18:28:33.762 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@4487c0c2: (connection evicted)
+2020-04-07 18:28:33.765 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@55d5801b: (connection evicted)
+2020-04-07 18:28:33.765 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@14e88a20: (connection evicted)
+2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@74c7756f: (connection evicted)
+2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@694078a4: (connection evicted)
+2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@7089ed19: (connection evicted)
+2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@47b5c4f7: (connection evicted)
+2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@21b9c02: (connection evicted)
+2020-04-07 18:28:33.766 DEBUG 7615 --- [HikariPool-1 connection closer] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@5c2d73e: (connection evicted)
+2020-04-07 18:28:33.766 DEBUG 7615 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+2020-04-07 18:28:33.766  INFO 7615 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
