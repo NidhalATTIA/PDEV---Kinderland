@@ -29,9 +29,6 @@ public class BlogComment implements Serializable {
 	@Column(name = "DateComment")
 	private Date DatePost;
 	
-	@ManyToMany
-	private Blog departement;
-	
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------	
 
 
