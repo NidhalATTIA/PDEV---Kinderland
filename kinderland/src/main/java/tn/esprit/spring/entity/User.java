@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User implements Serializable {
@@ -37,8 +38,18 @@ public class User implements Serializable {
 
 	@Column(name = "BirthDate")
 	private String BDate;
+	@Column(name = "Etat")
+	private String Etat;
 
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
+
+	public String getEtat() {
+		return Etat;
+	}
+
+	public void setEtat(String etat) {
+		Etat = etat;
+	}
 
 	public long getIdUser() {
 		return IdUser;
@@ -99,5 +110,7 @@ public class User implements Serializable {
 		return "User [idUser=" + IdUser + ", firstName=" + FirstName + ", LastName=" + LastName + ", Phone=" + Phone
 				+ ", Mail=" + Mail + ", BDate=" + BDate + "]";
 	}
-
+	//@JsonBackReference
+	@OneToOne
+		private Admin Admin;
 }
