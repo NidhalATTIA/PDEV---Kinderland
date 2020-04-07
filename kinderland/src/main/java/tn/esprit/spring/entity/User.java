@@ -38,14 +38,20 @@ public class User implements Serializable {
 
 	@Column(name = "BirthDate")
 	private String BDate;
+	
 	@Column(name = "Etat")
 	private String Etat;
 	
 	//@JsonBackReference
-		@OneToOne
-			private Admin Admin;
-		@OneToOne
-		private Nurse Nurse;
+	@OneToOne
+	private Admin Admin;
+	
+	@OneToOne
+	private Director director;
+	
+	@OneToOne
+	private Teacher teacher;
+
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
 
 	public String getEtat() {

@@ -19,6 +19,9 @@ public class Admin  implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
+
 
 	public Admin(int id) {
 		
