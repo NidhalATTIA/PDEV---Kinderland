@@ -3,12 +3,14 @@ package tn.esprit.spring.entity;
 import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Blog implements Serializable {
@@ -33,6 +35,11 @@ public class Blog implements Serializable {
 
 	@Column(name = "ImageBlog")
 	private String ImageBlog;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	Admin admin;
+	
+
 	
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------	
 
@@ -88,7 +95,13 @@ public class Blog implements Serializable {
 		return serialVersionUID;
 	}
 	
+
+	
+	
+	
 	// ---------------------------------------------------- ToString ---------------------------------------------------------------	
+
+	
 
 	@Override
 	public String toString() {
