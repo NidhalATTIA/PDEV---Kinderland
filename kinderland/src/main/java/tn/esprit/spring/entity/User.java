@@ -64,7 +64,18 @@ public class User implements Serializable {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<ForumPost> forumPost;
-
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	private Set<Reaction> Reactions;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="userdestinataire")
+	private Set<Notification> Notifications;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="sender")
+	private Set<Invitation> Sender;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="reciver")
+	private Set<Invitation> reciver;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user1")
+	private Set<Friendships> user1;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user2")
+	private Set<Friendships> user2;
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
 
 	public String getEtat() {
