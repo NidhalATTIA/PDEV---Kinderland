@@ -41,7 +41,7 @@ public class UserService implements UserInterface {
 
 
 	    @Override
-	    public List<User> listUsers(Pageable pageable) {
+	    public List<User> listUsers() {
 	        return (List<User>) userRepository.findAll();
 	    }
 
@@ -59,14 +59,14 @@ public class UserService implements UserInterface {
 
 
 	    @Override
-	    public void removeById(Long id) {
-	        userRepository.deleteById(id);
+	    public void removeById(long id) {
+	        userRepository.deleteById((long) id);
 	    }
 
 
 
 	    @Override
-	    public User findById(Long id) {
+	    public User findById(long id) {
 	        return userRepository.findById(id).get();
 	    }
 

@@ -23,6 +23,8 @@ public class Admin  implements Serializable{
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
 
 
+	 public Admin(){}
+
 	public Admin(int id) {
 		
 		this.id = id;

@@ -14,12 +14,12 @@ public interface UserInterface {
 
 	    Boolean removeAll();
 
-	    void removeById(Long id);
+	    void removeById(long id);
 
-	    User findById(Long id);
+	    User findById(long id);
 
 	  
-	    List<User> listUsers(Pageable pageable);
+	    List<User> listUsers();
 
 	    List<User> searchBy(String keyword, String criteria);
 }

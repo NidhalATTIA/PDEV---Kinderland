@@ -22,7 +22,7 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IdUser;
+	private long IdUser;
 
 	@Column(name = "firstName")
 	private String firstName;
@@ -113,11 +113,11 @@ public class User implements Serializable {
 		Etat = etat;
 	}
 
-	public int getIdUser() {
+	public long getIdUser() {
 		return IdUser;
 	}
 
-	public void setIdUser(int idUser) {
+	public void setIdUser(long idUser) {
 		this.IdUser = idUser;
 	}
 
