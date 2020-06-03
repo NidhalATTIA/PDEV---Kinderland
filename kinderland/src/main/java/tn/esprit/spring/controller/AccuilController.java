@@ -12,12 +12,11 @@ import org.springframework.stereotype.Service;
 @ELBeanName(value = "employeController")
 @Join(path = "/", to = "/login.jsf")
 public class AccuilController {
-	
 
 	public String acceuil() {
-	String navigateTo = "null";
-	
-	navigateTo = "/login.xhtml?faces-redirect=true";
-	return navigateTo;
-}
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;
+	}
 }
