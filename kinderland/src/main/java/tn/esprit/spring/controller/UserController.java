@@ -56,11 +56,11 @@ public class UserController {
 	@ResponseBody
 	public void rmvUser() {
 		userService.removeById((long) 2);
-		
-		
-		
-		 
-		
-
+	}
+	
+	@GetMapping("/find-user")
+	@ResponseBody
+	public User finduser() {
+		return userService.findById((long) 2);
 	}
 }
