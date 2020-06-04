@@ -40,9 +40,7 @@ public class Teacher  implements Serializable{
 		this.idTeacher = id;
 	}
 	
-	//@JsonBackReference
-	@OneToOne(mappedBy="teacher")
-	private User user;
+
 
 	public int getIdTeacher() {
 		return idTeacher;
@@ -60,13 +58,7 @@ public class Teacher  implements Serializable{
 		IdKinderGarden = idKinderGarden;
 	}
 
-	public User getUser() {
-		return user;
-	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

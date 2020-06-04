@@ -19,20 +19,20 @@ public class Parent  implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idParent;
+	private long idParent;
 	
 	@Column(name = "KinderGarden")
-	private int IdKinderGarden;
+	private long IdKinderGarden;
 	
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
 
 
-	public Parent(int id) {
+	public Parent(long id) {
 		
 		this.idParent = id;
 	}
 
-	public int getId() {
+	public long getId() {
 		return idParent;
 	}
 
@@ -40,11 +40,8 @@ public class Parent  implements Serializable{
 		this.idParent = id;
 	}
 	
-	//@JsonBackReference
-	@OneToOne(mappedBy="parent")
-	private User user;
 
-	public int getIdParent() {
+	public long getIdParent() {
 		return idParent;
 	}
 
@@ -52,7 +49,7 @@ public class Parent  implements Serializable{
 		this.idParent = idParent;
 	}
 
-	public int getIdKinderGarden() {
+	public long getIdKinderGarden() {
 		return IdKinderGarden;
 	}
 
@@ -60,13 +57,7 @@ public class Parent  implements Serializable{
 		IdKinderGarden = idKinderGarden;
 	}
 
-	public User getUser() {
-		return user;
-	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

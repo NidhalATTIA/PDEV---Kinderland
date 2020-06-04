@@ -3,11 +3,13 @@ package tn.esprit.spring.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Child implements Serializable {
@@ -29,6 +31,9 @@ public class Child implements Serializable {
 
 	@Column(name = "Niveau")
 	private String niveau;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private User parent;
 
 	public int getIdChild() {
 		return idChild;
