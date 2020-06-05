@@ -91,10 +91,19 @@ public class User implements Serializable {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<ForumPost> forumPost;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<ForumPostComment> forumPostComment;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<VoteCommentPost> voteCommentPost;
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Reaction> Reactions;
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="userdestinataire")
 	private Set<Notification> Notifications;
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="sender")
 	private Set<Invitation> Sender;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="reciver")

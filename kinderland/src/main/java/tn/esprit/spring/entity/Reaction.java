@@ -21,7 +21,6 @@ public class Reaction implements Serializable{
 	@Column(name = "ReactType")
 	private ReactType reacttype;
 	
-	
 	@ManyToOne
 	User user;
 }

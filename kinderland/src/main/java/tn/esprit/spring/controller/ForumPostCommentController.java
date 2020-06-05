@@ -21,14 +21,15 @@ public class ForumPostCommentController {
 
 	@GetMapping("/retrieve-all-comments")
 	@ResponseBody
-	public List<ForumPostComment> getForumPost() {
+	public List<ForumPostComment> getForumPostComment() {
 		List<ForumPostComment> list = forumPostCommentService.GetAllForumPostCommentJPQL();
 		return list;
 	}
+	
 
 	@GetMapping("/add-comments")
 	@ResponseBody
-	public void saveUser() {
+	public void saveForumPostComment() {
 		fpc.setTextComment("aaaaaaaaaa");
 		forumPostCommentService.AddForumPostComment(fpc);
 
@@ -36,7 +37,7 @@ public class ForumPostCommentController {
 
 	@GetMapping("/Edit-comments")
 	@ResponseBody
-	public void EditUser() {
+	public void EditForumPostComment() {
 		fpc = forumPostCommentService.GetForumPostCommentById((long) 2);
 		fpc.setTextComment("tttttt");
 
@@ -45,7 +46,7 @@ public class ForumPostCommentController {
 
 	@GetMapping("/rmv-comments")
 	@ResponseBody
-	public void rmvUser() {
+	public void rmvForumPostComment() {
 		forumPostCommentService.DeleteForumPostComment((long) 2);
 	}
 

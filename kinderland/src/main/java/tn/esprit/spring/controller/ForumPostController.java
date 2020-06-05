@@ -27,7 +27,7 @@ public class ForumPostController {
 
 	@GetMapping("/add-post")
 	@ResponseBody
-	public void saveUser() {
+	public void saveForumPost() {
 		fp.setTextPost("ssssssssss");
 		forumPostService.AddForumPost(fp);
 
@@ -35,7 +35,7 @@ public class ForumPostController {
 
 	@GetMapping("/Edit-post")
 	@ResponseBody
-	public void EditUser() {
+	public void EditForumPost() {
 		fp = forumPostService.GetForumPostById((long) 2);
 		fp.setTitlePost("tttttt");
 
@@ -44,13 +44,13 @@ public class ForumPostController {
 
 	@GetMapping("/rmv-post")
 	@ResponseBody
-	public void rmvUser() {
+	public void rmvForumPost() {
 		forumPostService.DeleteForumPost((long) 2);
 	}
 
 	@GetMapping("/find-post")
 	@ResponseBody
-	public ForumPost findpost() {
+	public ForumPost findForumPost() {
 		return forumPostService.GetForumPostById((long) 2);
 	}
 

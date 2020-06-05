@@ -10,8 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class ForumPost implements Serializable {
@@ -38,13 +38,16 @@ public class ForumPost implements Serializable {
 	@Column(name = "ImagePost")
 	private String ImagePost;
 	
+	@Column(name = "CategoryPost")
+	private String CategoryPost;
+	
 	@Column(name = "Pinned")
 	private Boolean Pinned;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	User user;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<ForumPostComment> forumPostComment;
 
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------
@@ -109,16 +112,23 @@ public class ForumPost implements Serializable {
 	public void setPinned(Boolean pinned) {
 		Pinned = pinned;
 	}
+	
+	public String getCategoryPost() {
+		return CategoryPost;
+	}
 
-
+	public void setCategoryPost(String categoryPost) {
+		CategoryPost = categoryPost;
+	}
+	
 
 // ---------------------------------------------------- ToString ---------------------------------------------------------------
 
 	@Override
 	public String toString() {
 		return "ForumPost [IdPost=" + IdPost + ", IdUser=" + IdUser + ", TitlePost=" + TitlePost + ", DatePost="
-				+ DatePost + ", TextPost=" + TextPost + ", ImagePost=" + ImagePost + ", Pinned=" + Pinned + "]";
+				+ DatePost + ", TextPost=" + TextPost + ", ImagePost=" + ImagePost + ", CategoryPost=" + CategoryPost
+				+ ", Pinned=" + Pinned + ", user=" + user + ", forumPostComment=" + forumPostComment + "]";
 	}
-	
 
 }

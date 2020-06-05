@@ -1,7 +1,9 @@
 package tn.esprit.spring.entity;
 
+
+
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -10,7 +12,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 @Entity
 public class ForumPostComment implements Serializable {
@@ -27,10 +33,18 @@ public class ForumPostComment implements Serializable {
 	private String ImageComment;
 	
 	@Column(name = "DateComment")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date DatePost;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private Set<ForumPost> forumPost;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private User user;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private ForumPost forumPost;
+		
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<VoteCommentPost> voteCommentPost;
 	
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------	
 
@@ -69,13 +83,13 @@ public class ForumPostComment implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
+	
 	// ---------------------------------------------------- ToString ---------------------------------------------------------------
 	
 	@Override
 	public String toString() {
-		return "PostComment [IdPostComment=" + IdPostComment + ", TextComment=" + TextComment + ", ImageComment="
-				+ ImageComment + ", DatePost=" + DatePost + "]";
+		return "ForumPostComment [IdPostComment=" + IdPostComment + ", TextComment=" + TextComment + ", ImageComment="
+				+ ImageComment + ", DatePost=" + DatePost + ", user=" + user + ", forumPost=" + forumPost + "]";
 	}
 	
 	

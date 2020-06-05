@@ -48,7 +48,7 @@ public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 	@Override
 	public void DeleteForumPostComment(Long ForumPostCommentId) {
 		forumpostcommentrepository.deleteById(ForumPostCommentId);
-
 	}
+	
 
 }
