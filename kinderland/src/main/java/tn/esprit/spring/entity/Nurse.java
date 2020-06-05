@@ -22,10 +22,6 @@ public class Nurse  implements Serializable{
 	private int idNurse;
 
 	
-	//@JsonBackReference
-	@OneToOne(mappedBy="nurse")
-	private User user;
-
 
 	public int getIdNurse() {
 		return idNurse;
@@ -37,14 +33,7 @@ public class Nurse  implements Serializable{
 	}
 
 
-	public User getUser() {
-		return user;
-	}
-
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 
 
 	public static long getSerialversionuid() {

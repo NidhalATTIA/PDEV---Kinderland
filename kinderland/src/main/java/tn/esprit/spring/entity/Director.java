@@ -40,9 +40,7 @@ public class Director  implements Serializable{
 		this.idDirector = id;
 	}
 	
-	//@JsonBackReference
-	@OneToOne(mappedBy="director")
-	private User user;
+	
 
 	public int getIdDirector() {
 		return idDirector;
@@ -60,13 +58,7 @@ public class Director  implements Serializable{
 		IdKinderGarden = idKinderGarden;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
