@@ -59,17 +59,7 @@ public class User implements Serializable {
 	@Column(name = "isActive")
 	private Boolean isActive;
 	
-	@Column(name = "Role")
-	private Role role;
-	
 
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
 
 	public Boolean getIsActive() {
 		return isActive;
@@ -83,7 +73,21 @@ public class User implements Serializable {
 		this.isActive = isActive;
 	}
 
+	//@JsonBackReference
+	@OneToOne
+	private Admin Admin;
 	
+	@OneToOne
+	private Director director;
+	
+	@OneToOne
+	private Teacher teacher;
+	
+	@OneToOne
+	private Parent parent;
+	
+	@OneToOne
+	private Nurse nurse;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<ForumPost> forumPost;
