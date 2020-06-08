@@ -18,5 +18,193 @@ public class AccuilController {
 
 		navigateTo = "/login.xhtml?faces-redirect=true";
 		return navigateTo;
+		/* @Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;@Service
+@Scope(value = "session")
+@Controller(value = "employeController")
+@ELBeanName(value = "employeController")
+@Join(path = "/", to = "/login.jsf")
+public class AccuilController {
+
+	public String acceuil() {
+		String navigateTo = "null";
+
+		navigateTo = "/login.xhtml?faces-redirect=true";
+		return navigateTo;*/ 
 	}
 }
