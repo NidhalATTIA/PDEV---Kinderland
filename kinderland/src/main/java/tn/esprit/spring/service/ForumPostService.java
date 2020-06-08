@@ -10,9 +10,9 @@ public interface ForumPostService {
 
 	public List<ForumPost> GetAllForumPostJPQL();
 
-	public ForumPost GetForumPostById(Long ForumPostId);
+	public ForumPost GetForumPostById(Long forumPostId);
 
-	public ForumPost UpdateForumPost(ForumPost forumpost);
+	public void UpdateForumPost(Long forumPostId, ForumPost forumpost);
 
-	public void DeleteForumPost(Long ForumPostId);
+	public void DeleteForumPost(Long forumPostId);
 }

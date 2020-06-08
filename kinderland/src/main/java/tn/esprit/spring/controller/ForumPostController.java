@@ -40,8 +40,8 @@ public class ForumPostController {
 
 	@PutMapping(value = "/Edit-post/{PostId}")
 	@ResponseBody
-	public ForumPost EditForumPost(@RequestBody ForumPost forumPost) {
-		forumPostService.UpdateForumPost(forumPost);
+	public ForumPost EditForumPost(@PathVariable("PostId")Long ForumPostId,@RequestBody ForumPost forumPost) {
+		forumPostService.UpdateForumPost((long) ForumPostId, forumPost);
 		return forumPost;
 		
 	}

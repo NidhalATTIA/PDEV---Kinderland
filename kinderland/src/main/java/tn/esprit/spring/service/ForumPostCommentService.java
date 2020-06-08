@@ -11,7 +11,7 @@ public interface ForumPostCommentService {
 
 	public ForumPostComment GetForumPostCommentById(Long ForumPostCommentId);
 
-	public ForumPostComment UpdateForumPostComment(ForumPostComment forumpostcomment);
+	public ForumPostComment UpdateForumPostComment(Long ForumPostCommentId, ForumPostComment forumpostcomment);
 
 	public void DeleteForumPostComment(Long ForumPostCommentId);
 

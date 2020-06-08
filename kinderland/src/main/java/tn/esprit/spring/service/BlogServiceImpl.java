@@ -40,7 +40,7 @@ public class BlogServiceImpl implements BlogService {
 
 	// Modification
 	@Override
-	public Blog UpdateBlog(Blog blog) {
+	public Blog UpdateBlog(Long BlogId, Blog blog) {
 		return blogrepository.save(blog);
 	}
 

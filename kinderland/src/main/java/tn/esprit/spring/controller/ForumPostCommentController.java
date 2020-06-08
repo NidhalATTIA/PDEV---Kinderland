@@ -3,7 +3,12 @@ package tn.esprit.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,28 +31,24 @@ public class ForumPostCommentController {
 		return list;
 	}
 	
-
-	@GetMapping("/add-comments")
+	@PostMapping("/add-comments")
 	@ResponseBody
-	public void saveForumPostComment() {
-		fpc.setTextComment("aaaaaaaaaa");
-		forumPostCommentService.AddForumPostComment(fpc);
-
+	public ForumPostComment saveForumPostComment(@RequestBody ForumPostComment forumPostComment) {	
+		forumPostCommentService.AddForumPostComment(forumPostComment);
+		return forumPostComment;
 	}
 
-	@GetMapping("/Edit-comments")
+	@PutMapping("/Edit-comments/{PostCommentId}")
 	@ResponseBody
-	public void EditForumPostComment() {
-		fpc = forumPostCommentService.GetForumPostCommentById((long) 2);
-		fpc.setTextComment("tttttt");
-
-		forumPostCommentService.UpdateForumPostComment(fpc);
+	public ForumPostComment EditForumPostComment(@PathVariable("PostCommentId")Long ForumPostCommentId,@RequestBody ForumPostComment forumPostComment) {
+		forumPostCommentService.UpdateForumPostComment((long) ForumPostCommentId, forumPostComment);
+		return forumPostComment;
 	}
 
-	@GetMapping("/rmv-comments")
+	@DeleteMapping("/rmv-comments/{PostCommentId}")
 	@ResponseBody
-	public void rmvForumPostComment() {
-		forumPostCommentService.DeleteForumPostComment((long) 2);
+	public void rmvForumPostComment(@PathVariable("PostCommentId")Long ForumPostCommentId) {
+		forumPostCommentService.DeleteForumPostComment((long) ForumPostCommentId);
 	}
 
 

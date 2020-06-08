@@ -13,7 +13,7 @@ public interface BlogService {
 	
 	public Blog GetBlogById(Long BlogId);
 	
-	public Blog UpdateBlog(Blog blog);
+	public Blog UpdateBlog(Long BlogId,Blog blog);
 	
 	public void DeleteBlog(Long BlogId);
 	

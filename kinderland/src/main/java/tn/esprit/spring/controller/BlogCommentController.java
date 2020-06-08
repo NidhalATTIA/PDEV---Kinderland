@@ -3,11 +3,17 @@ package tn.esprit.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.BlogComment;
+import tn.esprit.spring.entity.ForumPost;
 import tn.esprit.spring.service.BlogCommentService;
 
 
@@ -19,6 +25,7 @@ public class BlogCommentController {
 	@Autowired
 	BlogCommentService blogCommentService;
 	BlogComment bc = new BlogComment();
+	
 
 	@GetMapping("/retrieve-all-Bcomments")
 	@ResponseBody
@@ -26,29 +33,31 @@ public class BlogCommentController {
 		List<BlogComment> list = blogCommentService.GetAllBlogCommentJPQL();
 		return list;
 	}
-
-	@GetMapping("/add-Bcomments")
+	
+	
+	@PostMapping("/add-Bcomments")
 	@ResponseBody
-	public void saveBlogComment() {
-		bc.setTextComment("aaaaaaaaaa");
-		blogCommentService.AddBlogComment(bc);
-
+	public BlogComment saveBlogComment(@RequestBody BlogComment blogComment) {
+		blogCommentService.AddBlogComment(blogComment);
+		return blogComment;
 	}
 
-	@GetMapping("/Edit-Bcomments")
+	
+	@PutMapping(value = "/Edit-Bcomments/{BlogCommentId}")
 	@ResponseBody
-	public void EditBlogComment() {
-		bc = blogCommentService.GetBlogCommentById((long) 2);
-		bc.setTextComment("tttttt");
-
-		blogCommentService.UpdateBlogComment(bc);
+	public BlogComment EditBlogComment(@PathVariable("BlogCommentId")Long BlogCommentId,@RequestBody BlogComment blogComment) {
+		blogCommentService.UpdateBlogComment((long) BlogCommentId, blogComment);
+		return blogComment;
+		
 	}
 
-	@GetMapping("/rmv-Bcomments")
+	
+	@DeleteMapping("/rmv-Bcomments/{PostId}")
 	@ResponseBody
-	public void rmvForumPostComment() {
-		blogCommentService.DeleteBlogComment((long) 2);
+	public void rmvBlogPostComment(@PathVariable("BlogCommentId")Long BlogCommentId) {
+		blogCommentService.DeleteBlogComment((long) BlogCommentId);
 	}
+
 
 
 }

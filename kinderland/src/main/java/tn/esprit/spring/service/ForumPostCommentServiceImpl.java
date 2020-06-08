@@ -40,7 +40,7 @@ public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 
 	// Modification
 	@Override
-	public ForumPostComment UpdateForumPostComment(ForumPostComment forumpostcomment) {
+	public ForumPostComment UpdateForumPostComment(Long ForumPostCommentId,ForumPostComment forumpostcomment) {
 		return forumpostcommentrepository.save(forumpostcomment);
 	}
 

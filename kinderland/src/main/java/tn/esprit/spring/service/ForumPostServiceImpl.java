@@ -40,8 +40,8 @@ public class ForumPostServiceImpl implements ForumPostService {
 
 	// Modification
 	@Override
-	public ForumPost UpdateForumPost(ForumPost forumpost) {
-		return forumpostrepository.save(forumpost);
+	public void UpdateForumPost(Long forumPostId, ForumPost forumpost) {
+		forumpostrepository.save(forumpost);
 	}
 
 	// Supression

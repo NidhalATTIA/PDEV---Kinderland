@@ -42,7 +42,7 @@ public class BlogCommentServiceImpl implements BlogCommentService {
 
 	// Modification
 	@Override
-	public BlogComment UpdateBlogComment(BlogComment blogcomment) {
+	public BlogComment UpdateBlogComment(Long blogCommentId, BlogComment blogcomment) {
 		return blogcommentrepository.save(blogcomment);
 	}
 

@@ -9,10 +9,10 @@ public interface BlogCommentService {
 
 	public List<BlogComment> GetAllBlogCommentJPQL();
 
-	public BlogComment GetBlogCommentById(Long BlogCommentId);
+	public BlogComment GetBlogCommentById(Long blogCommentId);
 
-	public BlogComment UpdateBlogComment(BlogComment blogcomment);
+	public BlogComment UpdateBlogComment(Long blogCommentId, BlogComment blogcomment);
 
-	public void DeleteBlogComment(Long BlogCommentId);
+	public void DeleteBlogComment(Long blogCommentId);
 
 }
