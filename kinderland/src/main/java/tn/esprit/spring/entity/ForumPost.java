@@ -22,9 +22,6 @@ public class ForumPost implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long IdPost;
 
-	@Column(name = "IdUser")
-	private int IdUser;
-
 	@Column(name = "TitlePost")
 	private String TitlePost;
 
@@ -60,13 +57,6 @@ public class ForumPost implements Serializable {
 		IdPost = idPost;
 	}
 
-	public int getIdUser() {
-		return IdUser;
-	}
-
-	public void setIdUser(int idUser) {
-		IdUser = idUser;
-	}
 
 	public String getTitlePost() {
 		return TitlePost;
@@ -120,15 +110,14 @@ public class ForumPost implements Serializable {
 	public void setCategoryPost(String categoryPost) {
 		CategoryPost = categoryPost;
 	}
-	
+
 
 // ---------------------------------------------------- ToString ---------------------------------------------------------------
-
 	@Override
 	public String toString() {
-		return "ForumPost [IdPost=" + IdPost + ", IdUser=" + IdUser + ", TitlePost=" + TitlePost + ", DatePost="
-				+ DatePost + ", TextPost=" + TextPost + ", ImagePost=" + ImagePost + ", CategoryPost=" + CategoryPost
-				+ ", Pinned=" + Pinned + ", user=" + user + ", forumPostComment=" + forumPostComment + "]";
+		return "ForumPost [IdPost=" + IdPost + ", TitlePost=" + TitlePost + ", DatePost=" + DatePost + ", TextPost="
+				+ TextPost + ", ImagePost=" + ImagePost + ", CategoryPost=" + CategoryPost + ", Pinned=" + Pinned
+				+ ", user=" + user + ", forumPostComment=" + forumPostComment + "]";
 	}
-
+	
 }

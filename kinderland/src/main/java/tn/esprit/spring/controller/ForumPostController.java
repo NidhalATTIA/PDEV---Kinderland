@@ -3,11 +3,17 @@ package tn.esprit.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.ForumPost;
+import tn.esprit.spring.entity.Reclamation;
 import tn.esprit.spring.service.ForumPostService;
 
 @RestController
@@ -25,33 +31,33 @@ public class ForumPostController {
 
 	}
 
-	@GetMapping("/add-post")
+	@PostMapping("/add-post")
 	@ResponseBody
-	public void saveForumPost() {
-		fp.setTextPost("ssssssssss");
-		forumPostService.AddForumPost(fp);
-
+	public ForumPost saveForumPost(@RequestBody ForumPost forumPost) {
+		forumPostService.AddForumPost(forumPost);
+		return forumPost;
 	}
 
-	@GetMapping("/Edit-post")
+	@PutMapping(value = "/Edit-post/{PostId}")
 	@ResponseBody
-	public void EditForumPost() {
-		fp = forumPostService.GetForumPostById((long) 2);
-		fp.setTitlePost("tttttt");
+	public ForumPost EditForumPost(@RequestBody ForumPost forumPost) {
+		forumPostService.UpdateForumPost(forumPost);
+		return forumPost;
+		
+	}
+	
 
-		forumPostService.UpdateForumPost(fp);
+	@DeleteMapping("/rmv-post/{PostId}")
+	@ResponseBody
+	public void rmvForumPost(@PathVariable("PostId")Long ForumPostId) {
+		forumPostService.DeleteForumPost((long) ForumPostId);
 	}
 
-	@GetMapping("/rmv-post")
+	
+	@PutMapping(value = "/find-post/{PostId}") 
 	@ResponseBody
-	public void rmvForumPost() {
-		forumPostService.DeleteForumPost((long) 2);
-	}
-
-	@GetMapping("/find-post")
-	@ResponseBody
-	public ForumPost findForumPost() {
-		return forumPostService.GetForumPostById((long) 2);
+	public ForumPost findForumPost(@PathVariable("PostId")Long ForumPostId) {
+		return forumPostService.GetForumPostById((long) ForumPostId);
 	}
 
 }
