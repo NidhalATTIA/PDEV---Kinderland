@@ -3,10 +3,15 @@ package tn.esprit.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import tn.esprit.spring.entity.Child;
+import tn.esprit.spring.entity.ForumPost;
 import tn.esprit.spring.service.IChildService;
 
 
@@ -21,20 +26,20 @@ public class ChildController {
 		return list;
 
 	}
-	@GetMapping("/Add-child")
+	@PostMapping("/Add-child")
 	@ResponseBody
-	public void AddChild(Child ch) {
+	public void AddChild(@RequestBody Child ch) {
 	
 		 ChildService.AddChild(ch);
 	}
-	@GetMapping("/Edit-child")
+	@PutMapping("/Edit-child")
 	@ResponseBody
-	public void EditChild(Child ch) {
+	public void EditChild(@RequestBody Child ch) {
 	
 		 ChildService.UpdateChild(ch);
 	}
 	
-	@GetMapping("/rmv-child")
+	@DeleteMapping("/rmv-child")
 	@ResponseBody
 	public void rmvChild() {
 		ChildService.DeleteChild((long)2);
