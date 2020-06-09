@@ -20,8 +20,9 @@ public class BlogCommentServiceImpl implements BlogCommentService {
 
 	// Ajout
 	@Override
-	public BlogComment AddBlogComment(BlogComment blogcomment) {
-		return blogcommentrepository.save(blogcomment);
+	public long AddBlogComment(BlogComment blogcomment) {
+		blogcommentrepository.save(blogcomment);
+		return blogcomment.getIdBlogComment();
 	}
 
 	// Affichage all
@@ -42,8 +43,8 @@ public class BlogCommentServiceImpl implements BlogCommentService {
 
 	// Modification
 	@Override
-	public BlogComment UpdateBlogComment(Long blogCommentId, BlogComment blogcomment) {
-		return blogcommentrepository.save(blogcomment);
+	public void UpdateBlogComment(Long blogCommentId, String textBlogComment) {
+		blogcommentrepository.UpdateBlogComment(textBlogComment, blogCommentId);
 	}
 
 	// Supression

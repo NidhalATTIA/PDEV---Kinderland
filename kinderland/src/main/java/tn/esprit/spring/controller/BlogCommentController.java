@@ -43,12 +43,10 @@ public class BlogCommentController {
 	}
 
 	
-	@PutMapping(value = "/Edit-Bcomments/{BlogCommentId}")
+	@PutMapping(value = "/Edit-Bcomments/{BlogCommentId}/{TextBlogComment1}")
 	@ResponseBody
-	public BlogComment EditBlogComment(@PathVariable("BlogCommentId")Long BlogCommentId,@RequestBody BlogComment blogComment) {
-		blogCommentService.UpdateBlogComment((long) BlogCommentId, blogComment);
-		return blogComment;
-		
+	public void EditBlogComment(@PathVariable("BlogCommentId")Long BlogCommentId,@PathVariable("TextBlogComment1") String TextBlogComment1) {
+		blogCommentService.UpdateBlogComment((long) BlogCommentId, TextBlogComment1);	
 	}
 
 	

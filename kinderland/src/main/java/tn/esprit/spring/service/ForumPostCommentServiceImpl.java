@@ -20,8 +20,9 @@ public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 
 	// Ajout
 	@Override
-	public ForumPostComment AddForumPostComment(ForumPostComment forumpostcomment) {
-		return forumpostcommentrepository.save(forumpostcomment);
+	public long AddForumPostComment(ForumPostComment forumpostcomment) {
+		forumpostcommentrepository.save(forumpostcomment);
+		return forumpostcomment.getIdPostComment();
 	}
 
 	// Affichage all
@@ -40,8 +41,8 @@ public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 
 	// Modification
 	@Override
-	public ForumPostComment UpdateForumPostComment(Long ForumPostCommentId,ForumPostComment forumpostcomment) {
-		return forumpostcommentrepository.save(forumpostcomment);
+	public void UpdateForumPostComment(Long ForumPostCommentId,String textForumPostcomment) {
+		forumpostcommentrepository.UpdateForumPostComment(textForumPostcomment, ForumPostCommentId);
 	}
 
 	// Supression

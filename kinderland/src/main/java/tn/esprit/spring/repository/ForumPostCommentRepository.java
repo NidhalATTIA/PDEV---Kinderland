@@ -7,11 +7,17 @@ import javax.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import tn.esprit.spring.entity.ForumPostComment;
 
-public interface ForumPostCommentRepository extends JpaRepository<ForumPostComment, Long>{
+public interface ForumPostCommentRepository extends CrudRepository<ForumPostComment, Long>{
+	
+	@Modifying
+    @Transactional
+    @Query("UPDATE ForumPostComment e SET e.TextComment=:TextPostComment1 where e.IdPostComment=:PostCommentId")
+    public void UpdateForumPostComment(@Param("TextPostComment1")String TextPostComment1, @Param("PostCommentId")Long PostCommentId);
 	
 
 }

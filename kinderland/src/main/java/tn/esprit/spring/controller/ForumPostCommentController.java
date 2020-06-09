@@ -38,11 +38,10 @@ public class ForumPostCommentController {
 		return forumPostComment;
 	}
 
-	@PutMapping("/Edit-comments/{PostCommentId}")
+	@PutMapping("/Edit-comments/{PostCommentId}/{TextPostComment1}")
 	@ResponseBody
-	public ForumPostComment EditForumPostComment(@PathVariable("PostCommentId")Long ForumPostCommentId,@RequestBody ForumPostComment forumPostComment) {
-		forumPostCommentService.UpdateForumPostComment((long) ForumPostCommentId, forumPostComment);
-		return forumPostComment;
+	public void EditForumPostComment(@PathVariable("PostCommentId")Long ForumPostCommentId,@PathVariable("TextPostComment1") String TextPostComment1) {
+		forumPostCommentService.UpdateForumPostComment((long) ForumPostCommentId, TextPostComment1);
 	}
 
 	@DeleteMapping("/rmv-comments/{PostCommentId}")

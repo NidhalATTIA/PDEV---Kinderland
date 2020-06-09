@@ -20,8 +20,9 @@ public class BlogServiceImpl implements BlogService {
 
 	// Ajout
 	@Override
-	public Blog AddBlog(Blog blog) {
-		return blogrepository.save(blog);
+	public long AddBlog(Blog blog) {
+		blogrepository.save(blog);
+		return blog.getIdBlog();
 	}
 
 	// Affichage all
@@ -40,8 +41,8 @@ public class BlogServiceImpl implements BlogService {
 
 	// Modification
 	@Override
-	public Blog UpdateBlog(Long BlogId, Blog blog) {
-		return blogrepository.save(blog);
+	public void UpdateBlog(Long BlogId, String textBlog) {
+		blogrepository.UpdateBlog(textBlog, BlogId);
 	}
 
 	// Supression

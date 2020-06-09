@@ -41,12 +41,10 @@ public class BlogController {
 	}
 	
 	
-	@PutMapping(value = "/Edit-blog/{BlogId}")
+	@PutMapping(value = "/Edit-blog/{BlogId/{TextBlog1}}")
 	@ResponseBody
-	public Blog EditForumPost(@PathVariable("BlogId")Long BlogIdId, @RequestBody Blog blog) {
-		blogService.UpdateBlog((long) BlogIdId, blog);
-		return blog;
-		
+	public void EditForumPost(@PathVariable("BlogId")Long BlogIdId, @PathVariable("TextBlog1") String TextBlog1) {
+		blogService.UpdateBlog((long) BlogIdId, TextBlog1);	
 	}
 	
 	@DeleteMapping("/rmv-blog/{BlogId}")
