@@ -1,7 +1,7 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -12,6 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 
 @Entity
@@ -29,6 +33,8 @@ public class BlogComment implements Serializable {
 	private String ImageComment;
 	
 	@Column(name = "DateComment")
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp
 	private Date DatePost;
 	
 	@ManyToMany(cascade = CascadeType.ALL)

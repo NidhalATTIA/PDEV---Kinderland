@@ -1,7 +1,7 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -12,7 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 public class Blog implements Serializable {
@@ -30,6 +33,8 @@ public class Blog implements Serializable {
 	private String TitleBlog;
 
 	@Column(name = "DateBlog")
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp
 	private Date DateBlog;
 
 	@Column(name = "TextBlog")

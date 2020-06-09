@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 
 @Entity
 public class ForumPostComment implements Serializable {
@@ -34,6 +36,7 @@ public class ForumPostComment implements Serializable {
 	
 	@Column(name = "DateComment")
 	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp
 	private Date DatePost;
 	
 	
