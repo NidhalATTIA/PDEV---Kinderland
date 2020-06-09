@@ -3,6 +3,7 @@ package tn.esprit.spring.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entity.FicheMedical;
@@ -20,7 +21,7 @@ public class FicheMedicalServiceImp implements IFicheMedicalService{
 
 		return ficheMedical;
 	}
-
+	
 	@Override
 	public List<FicheMedical> GetAllFicheMedicalJPQL() {
 		return (List<FicheMedical>) ficheMedicalRepository.findAll();
@@ -43,5 +44,6 @@ public class FicheMedicalServiceImp implements IFicheMedicalService{
 	public void DeleteFicheMedical(Long ficheMedicalid) {
 		ficheMedicalRepository.deleteById(ficheMedicalid);		
 	}
+
 
 }

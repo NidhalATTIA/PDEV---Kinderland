@@ -21,10 +21,7 @@ public class FriendShipController {
 	public List<Friendship> getinvs() {
 		List<Friendship> list = friendshipService.GetAllFriendshipJPQL();
 		return list;
-
 	}
-
-
 	
 	@GetMapping("/rmv-friendship")
 	@ResponseBody
@@ -36,5 +33,10 @@ public class FriendShipController {
 	@ResponseBody
 	public Friendship findinv() {
 		return friendshipService.GetFriendshipById((long) 2);
+	}
+	@GetMapping("/Add-friendship")
+	@ResponseBody
+	public Friendship AddFriend(Friendship friendship) {
+		return friendshipService.AddFriendship(friendship);
 	}
 }

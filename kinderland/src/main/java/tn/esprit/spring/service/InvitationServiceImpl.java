@@ -7,7 +7,9 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.entity.Child;
 import tn.esprit.spring.entity.Invitation;
+import tn.esprit.spring.entity.User;
 import tn.esprit.spring.repository.InvitationRepository;
 
 @Service
@@ -50,6 +52,12 @@ public class InvitationServiceImpl  implements IInvitationService {
 	@Override
 	public void DeleteInvitation(Long InvitationId) {
 		Invitationrepository.deleteById(InvitationId);
+	}
+
+	@Override
+	public List<User> GetAllSuggestionsJPQL(long id) {
+		
+		return (List<User>) Invitationrepository.getsuggestions(id);
 	}
 
 	

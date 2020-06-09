@@ -2,6 +2,7 @@ package tn.esprit.spring.service;
 
 import java.util.List;
 
+
 import tn.esprit.spring.entity.FicheMedical;
 
 public interface IFicheMedicalService {
@@ -14,4 +15,5 @@ public interface IFicheMedicalService {
 	public FicheMedical UpdateFicheMedical(FicheMedical ficheMedical);
 
 	public void DeleteFicheMedical(Long ficheMedicalid);
+
 }

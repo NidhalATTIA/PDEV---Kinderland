@@ -17,9 +17,10 @@ public class Invitation implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@ManyToOne
-	User sender;
 	
 	@ManyToOne
-	User reciver;
+	private	User sender;
+	
+	@ManyToOne
+	private User reciver;
 }

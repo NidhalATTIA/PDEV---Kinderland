@@ -22,5 +22,41 @@ public class Reaction implements Serializable{
 	private ReactType reacttype;
 	
 	@ManyToOne
+	Post post;
+	
+	@ManyToOne
 	User user;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public ReactType getReacttype() {
+		return reacttype;
+	}
+
+	public void setReacttype(ReactType reacttype) {
+		this.reacttype = reacttype;
+	}
+
+	public Post getPost() {
+		return post;
+	}
+
+	public void setPost(Post post) {
+		this.post = post;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 }

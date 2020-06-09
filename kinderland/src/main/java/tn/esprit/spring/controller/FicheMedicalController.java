@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.esprit.spring.entity.Consultation;
 import tn.esprit.spring.entity.FicheMedical;
 import tn.esprit.spring.service.IFicheMedicalService;
 
@@ -24,7 +25,6 @@ public class FicheMedicalController {
 
 	}
 
-
 	
 	@GetMapping("/rmv-ficheMedical")
 	@ResponseBody
@@ -35,6 +35,17 @@ public class FicheMedicalController {
 	@GetMapping("/find-ficheMedical")
 	@ResponseBody
 	public FicheMedical findFicheMedical() {
-		return  ficheMedicalService.GetFicheMedicalById((long) 2);
+		return  ficheMedicalService.GetFicheMedicalById((long) 1);
+	}
+	@GetMapping("/add-ficheMedical")
+	@ResponseBody
+	public void addConsultation(FicheMedical con) {
+		ficheMedicalService.AddFicheMedical(con);
+	}
+	@GetMapping("/Edit-ficheMedical")
+	@ResponseBody
+	public void EditConsultation(long id) {
+	FicheMedical fiche = ficheMedicalService.GetFicheMedicalById(id);
+	ficheMedicalService.UpdateFicheMedical(fiche);
 	}
 }
