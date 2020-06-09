@@ -17,6 +17,6 @@ public class AccuilController {
 		String navigateTo = "null";
 
 		navigateTo = "/login.xhtml?faces-redirect=true";
-		return navigateTo;		
+		return navigateTo;
 	}
 }

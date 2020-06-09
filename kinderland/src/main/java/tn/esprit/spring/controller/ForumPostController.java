@@ -28,7 +28,6 @@ public class ForumPostController {
 	public List<ForumPost> getForumPost() {
 		List<ForumPost> list = forumPostService.GetAllForumPostJPQL();
 		return list;
-
 	}
 
 	@PostMapping("/add-post")
@@ -38,12 +37,10 @@ public class ForumPostController {
 		return forumPost;
 	}
 
-	@PutMapping(value = "/Edit-post/{PostId}")
+	@PutMapping(value = "/Edit-post/{PostId}/{TextPost1}")
 	@ResponseBody
-	public ForumPost EditForumPost(@PathVariable("PostId")Long ForumPostId,@RequestBody ForumPost forumPost) {
-		forumPostService.UpdateForumPost((long) ForumPostId, forumPost);
-		return forumPost;
-		
+	public void EditForumPost(@PathVariable("PostId")Long ForumPostId,@PathVariable("TextPost1") String TextPost1) {
+		forumPostService.UpdateForumPost((long) ForumPostId, TextPost1);
 	}
 	
 

@@ -20,8 +20,9 @@ public class ForumPostServiceImpl implements ForumPostService {
 
 	// Ajout
 	@Override
-	public ForumPost AddForumPost(ForumPost forumpost) {
-		return forumpostrepository.save(forumpost);
+	public long AddForumPost(ForumPost forumpost) {
+		forumpostrepository.save(forumpost);
+		return forumpost.getIdPost();
 	}
 
 	// Affichage all
@@ -40,9 +41,11 @@ public class ForumPostServiceImpl implements ForumPostService {
 
 	// Modification
 	@Override
-	public void UpdateForumPost(Long forumPostId, ForumPost forumpost) {
-		forumpostrepository.save(forumpost);
+	public void UpdateForumPost(Long forumPostId, String textForumPost) {
+		forumpostrepository.UpdateForumPost(textForumPost, forumPostId);
 	}
+	
+	
 
 	// Supression
 	@Override
