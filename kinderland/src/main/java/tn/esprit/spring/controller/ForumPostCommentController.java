@@ -43,6 +43,12 @@ public class ForumPostCommentController {
 	public void EditForumPostComment(@PathVariable("PostCommentId")Long ForumPostCommentId,@PathVariable("TextPostComment1") String TextPostComment1) {
 		forumPostCommentService.UpdateForumPostComment((long) ForumPostCommentId, TextPostComment1);
 	}
+	
+	@PutMapping("/Vote-comments/{PostCommentId}/{VoteComment1}")
+	@ResponseBody
+	public void EditVoteComment(@PathVariable("PostCommentId")Long PostCommentId) {
+		forumPostCommentService.UpdateForumPostCommentVote((long)PostCommentId);
+	}
 
 	@DeleteMapping("/rmv-comments/{PostCommentId}")
 	@ResponseBody

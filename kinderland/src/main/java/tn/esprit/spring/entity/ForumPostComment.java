@@ -34,6 +34,9 @@ public class ForumPostComment implements Serializable {
 	@Column(name = "ImageComment")
 	private String ImageComment;
 	
+	@Column(name = "VoteComment")
+	private int VoteComment;
+	
 	@Column(name = "DateComment")
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
@@ -46,8 +49,8 @@ public class ForumPostComment implements Serializable {
 	@ManyToOne(cascade = CascadeType.ALL)
 	private ForumPost forumPost;
 		
-	@OneToMany(cascade = CascadeType.ALL)
-	private Set<VoteComment> voteCommentPost;
+	/*@OneToMany(cascade = CascadeType.ALL)
+	private Set<VoteComment> voteCommentPost;*/
 	
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------	
 
@@ -87,13 +90,48 @@ public class ForumPostComment implements Serializable {
 		return serialVersionUID;
 	}
 	
+	public int getVoteComment() {
+		return VoteComment;
+	}
+
+	public void setVoteComment(int voteComment) {
+		VoteComment = voteComment;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public ForumPost getForumPost() {
+		return forumPost;
+	}
+
+	public void setForumPost(ForumPost forumPost) {
+		this.forumPost = forumPost;
+	}
+
+	
+	/*public Set<VoteComment> getVoteCommentPost() {
+		return voteCommentPost;
+	}
+
+	public void setVoteCommentPost(Set<VoteComment> voteCommentPost) {
+		this.voteCommentPost = voteCommentPost;
+	}*/
+
 	// ---------------------------------------------------- ToString ---------------------------------------------------------------
 	
 	@Override
 	public String toString() {
 		return "ForumPostComment [IdPostComment=" + IdPostComment + ", TextComment=" + TextComment + ", ImageComment="
-				+ ImageComment + ", DatePost=" + DatePost + ", user=" + user + ", forumPost=" + forumPost + "]";
+				+ ImageComment + ", VoteComment=" + VoteComment + ", DatePost=" + DatePost + ", user=" + user
+				+ ", forumPost=" + forumPost + "]";
 	}
+
 	
 	
 }
