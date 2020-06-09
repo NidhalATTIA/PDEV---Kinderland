@@ -29,8 +29,10 @@ public class FicheMedical implements Serializable{
 
 	@Column(name = "Poids")
 	private int poids;
+	
 	@Column(name = "Maladie_Chronique")
 	private boolean MaladieChronique;
+	
 	@Column(name = "noteMedecin")
 	private String contenu;
 	
