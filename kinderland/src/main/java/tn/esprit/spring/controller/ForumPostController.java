@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.ForumPost;
-import tn.esprit.spring.entity.Reclamation;
 import tn.esprit.spring.service.ForumPostService;
 
 @RestController
@@ -39,21 +38,19 @@ public class ForumPostController {
 
 	@PutMapping(value = "/Edit-post/{PostId}/{TextPost1}")
 	@ResponseBody
-	public void EditForumPost(@PathVariable("PostId")Long ForumPostId,@PathVariable("TextPost1") String TextPost1) {
+	public void EditForumPost(@PathVariable("PostId") Long ForumPostId, @PathVariable("TextPost1") String TextPost1) {
 		forumPostService.UpdateForumPost((long) ForumPostId, TextPost1);
 	}
-	
 
 	@DeleteMapping("/rmv-post/{PostId}")
 	@ResponseBody
-	public void rmvForumPost(@PathVariable("PostId")Long ForumPostId) {
+	public void rmvForumPost(@PathVariable("PostId") Long ForumPostId) {
 		forumPostService.DeleteForumPost((long) ForumPostId);
 	}
 
-	
-	@PutMapping(value = "/find-post/{PostId}") 
+	@PutMapping(value = "/find-post/{PostId}")
 	@ResponseBody
-	public ForumPost findForumPost(@PathVariable("PostId")Long ForumPostId) {
+	public ForumPost findForumPost(@PathVariable("PostId") Long ForumPostId) {
 		return forumPostService.GetForumPostById((long) ForumPostId);
 	}
 

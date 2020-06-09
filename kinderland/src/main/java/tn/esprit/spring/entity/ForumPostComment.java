@@ -44,7 +44,7 @@ public class ForumPostComment implements Serializable {
 	private ForumPost forumPost;
 		
 	@OneToMany(cascade = CascadeType.ALL)
-	private Set<VoteCommentPost> voteCommentPost;
+	private Set<VoteComment> voteCommentPost;
 	
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------	
 

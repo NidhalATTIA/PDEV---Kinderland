@@ -96,7 +96,7 @@ public class User implements Serializable {
 	private Set<ForumPostComment> forumPostComment;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	private Set<VoteCommentPost> voteCommentPost;
+	private Set<VoteComment> voteCommentPost;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Reaction> Reactions;
