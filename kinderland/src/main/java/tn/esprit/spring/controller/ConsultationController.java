@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -53,9 +55,9 @@ public class ConsultationController {
 	public void rmvConsultation() {
 		consultationService.DeleteConsultation((long)2);
 	}
-	@GetMapping("/add-consultation")
+	@PostMapping("/add-consultation")
 	@ResponseBody
-	public void addConsultation(Consultation con) {
+	public void addConsultation(@RequestBody Consultation con) {
 		consultationService.AddConsultation(con);
 	}
 	@GetMapping("/Edit-consultation")

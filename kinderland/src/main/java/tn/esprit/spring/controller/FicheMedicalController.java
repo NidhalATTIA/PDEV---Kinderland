@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +26,6 @@ public class FicheMedicalController {
 		return list;
 
 	}
-
 	
 	@GetMapping("/rmv-ficheMedical")
 	@ResponseBody
@@ -37,9 +38,9 @@ public class FicheMedicalController {
 	public FicheMedical findFicheMedical() {
 		return  ficheMedicalService.GetFicheMedicalById((long) 1);
 	}
-	@GetMapping("/add-ficheMedical")
+	@PostMapping("/add-ficheMedical")
 	@ResponseBody
-	public void addConsultation(FicheMedical con) {
+	public void addConsultation(@RequestBody FicheMedical con) {
 		ficheMedicalService.AddFicheMedical(con);
 	}
 	@GetMapping("/Edit-ficheMedical")
