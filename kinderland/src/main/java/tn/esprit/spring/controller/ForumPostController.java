@@ -53,5 +53,11 @@ public class ForumPostController {
 	public ForumPost findForumPost(@PathVariable("PostId") Long ForumPostId) {
 		return forumPostService.GetForumPostById((long) ForumPostId);
 	}
+	
+	@PutMapping("/vote-post/{PostId}")
+	@ResponseBody
+	public void EditVotePost(@PathVariable("PostId")Long ForumPostId) {
+		forumPostService.UpdateForumPostVote(ForumPostId);
+	}
 
 }

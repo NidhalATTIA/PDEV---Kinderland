@@ -50,10 +50,16 @@ public class BlogCommentController {
 	}
 
 	
-	@DeleteMapping("/rmv-Bcomments/{PostId}")
+	@DeleteMapping("/rmv-Bcomments/{BlogCommentId}")
 	@ResponseBody
 	public void rmvBlogPostComment(@PathVariable("BlogCommentId")Long BlogCommentId) {
 		blogCommentService.DeleteBlogComment((long) BlogCommentId);
+	}
+	
+	@PutMapping("/vote-Bcomments/{BlogCommentId}")
+	@ResponseBody
+	public void EditVoteBlog(@PathVariable("BlogCommentId")Long BlogPostId) {
+		blogCommentService.UpdateBlogCommentVote(BlogPostId);
 	}
 
 

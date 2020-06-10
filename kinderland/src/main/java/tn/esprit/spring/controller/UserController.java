@@ -3,6 +3,7 @@ package tn.esprit.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,7 +44,7 @@ public class UserController {
 
 
 	}
-	@GetMapping("/Edit-users")
+	@PutMapping("/Edit-users")
 	@ResponseBody
 	public void EditUser() {
 		u=userService.findById((long) 2);
@@ -54,7 +56,7 @@ public class UserController {
 
 
 	}
-	@GetMapping("/rmv-users")
+	@DeleteMapping("/rmv-users")
 	@ResponseBody
 	public void rmvUser() {
 		userService.removeById((long) 2);

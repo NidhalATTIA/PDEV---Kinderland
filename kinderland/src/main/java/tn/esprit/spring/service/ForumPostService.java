@@ -13,6 +13,8 @@ public interface ForumPostService {
 	public ForumPost GetForumPostById(Long forumPostId);
 
 	public void UpdateForumPost(Long forumPostId, String textForumPost);
+	
+	public void UpdateForumPostVote(Long forumPostId);
 
 	public void DeleteForumPost(Long forumPostId);
 }

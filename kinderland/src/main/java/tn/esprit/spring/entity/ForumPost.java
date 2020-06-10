@@ -34,27 +34,30 @@ public class ForumPost implements Serializable {
 	@CreationTimestamp
 	private Date DatePost;
 
+	@Column(name = "VotePost")
+	private int VotePost;
 
 	@Column(name = "TextPost")
 	private String TextPost;
 
 	@Column(name = "ImagePost")
 	private String ImagePost;
-	
+
 	@Column(name = "CategoryPost")
 	private String CategoryPost;
-	
+
 	@Column(name = "Pinned")
 	private Boolean Pinned;
-	
+
 	@ManyToOne(cascade = CascadeType.ALL)
 	User user;
-	
+
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<ForumPostComment> forumPostComment;
 
-	// -------------------------------------------------------- Getters and Setters ------------------------------------------------
-	
+	// -------------------------------------------------------- Getters and
+	// Setters ------------------------------------------------
+
 	public long getIdPost() {
 		return IdPost;
 	}
@@ -62,7 +65,6 @@ public class ForumPost implements Serializable {
 	public void setIdPost(long idPost) {
 		IdPost = idPost;
 	}
-
 
 	public String getTitlePost() {
 		return TitlePost;
@@ -72,7 +74,6 @@ public class ForumPost implements Serializable {
 		TitlePost = titlePost;
 	}
 
-	
 	public Date getDatePost() {
 		return DatePost;
 	}
@@ -108,7 +109,7 @@ public class ForumPost implements Serializable {
 	public void setPinned(Boolean pinned) {
 		Pinned = pinned;
 	}
-	
+
 	public String getCategoryPost() {
 		return CategoryPost;
 	}
@@ -117,13 +118,40 @@ public class ForumPost implements Serializable {
 		CategoryPost = categoryPost;
 	}
 
+	public int getVotePost() {
+		return VotePost;
+	}
 
-// ---------------------------------------------------- ToString ---------------------------------------------------------------
+	public void setVotePost(int votePost) {
+		VotePost = votePost;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Set<ForumPostComment> getForumPostComment() {
+		return forumPostComment;
+	}
+
+	public void setForumPostComment(Set<ForumPostComment> forumPostComment) {
+		this.forumPostComment = forumPostComment;
+	}
+
+	
+	// ---------------------------------------------------- ToString
+	// ---------------------------------------------------------------
+	
 	@Override
 	public String toString() {
-		return "ForumPost [IdPost=" + IdPost + ", TitlePost=" + TitlePost + ", DatePost=" + DatePost + ", TextPost="
-				+ TextPost + ", ImagePost=" + ImagePost + ", CategoryPost=" + CategoryPost + ", Pinned=" + Pinned
-				+ ", user=" + user + ", forumPostComment=" + forumPostComment + "]";
+		return "ForumPost [IdPost=" + IdPost + ", TitlePost=" + TitlePost + ", DatePost=" + DatePost + ", VotePost="
+				+ VotePost + ", TextPost=" + TextPost + ", ImagePost=" + ImagePost + ", CategoryPost=" + CategoryPost
+				+ ", Pinned=" + Pinned + ", user=" + user + ", forumPostComment=" + forumPostComment + "]";
 	}
-	
+
+
 }

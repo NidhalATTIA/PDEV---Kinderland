@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entity.ForumPost;
+import tn.esprit.spring.entity.ForumPostComment;
 import tn.esprit.spring.repository.ForumPostRepository;
 
 @Service
@@ -21,6 +22,7 @@ public class ForumPostServiceImpl implements ForumPostService {
 	// Ajout
 	@Override
 	public long AddForumPost(ForumPost forumpost) {
+		forumpost.setVotePost(0);
 		forumpostrepository.save(forumpost);
 		return forumpost.getIdPost();
 	}
@@ -45,12 +47,18 @@ public class ForumPostServiceImpl implements ForumPostService {
 		forumpostrepository.UpdateForumPost(textForumPost, forumPostId);
 	}
 	
-	
-
 	// Supression
 	@Override
 	public void DeleteForumPost(Long ForumPostId) {
 		forumpostrepository.deleteById(ForumPostId);
+	}
+
+	@Override
+	public void UpdateForumPostVote(Long forumPostId) {
+		ForumPost forumpost = forumpostrepository.findById(forumPostId).get();
+		forumpost.setVotePost(forumpost.getVotePost() + 1);
+		forumpostrepository.save(forumpost);		
+		
 	}
 
 }
