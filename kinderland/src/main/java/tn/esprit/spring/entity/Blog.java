@@ -36,12 +36,16 @@ public class Blog implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date DateBlog;
+	
 
 	@Column(name = "TextBlog")
 	private String TextBlog;
 
 	@Column(name = "ImageBlog")
 	private String ImageBlog;
+	
+	@Column(name = "VoteBlog")
+	private int VoteBlog;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	Admin admin;
@@ -119,20 +123,22 @@ public class Blog implements Serializable {
 		this.blogComment = blogComment;
 	}
 	
+	public int getVoteBlog() {
+		return VoteBlog;
+	}
+
+	public void setVoteBlog(int voteBlog) {
+		VoteBlog = voteBlog;
+	}
+
 	
 	
 	// ---------------------------------------------------- ToString ---------------------------------------------------------------	
 
-	
-
-	
-
 	@Override
 	public String toString() {
 		return "Blog [IdBlog=" + IdBlog + ", IdUser=" + IdUser + ", TitleBlog=" + TitleBlog + ", DateBlog=" + DateBlog
-				+ ", TextBlog=" + TextBlog + ", ImageBlog=" + ImageBlog + "]";
+				+ ", TextBlog=" + TextBlog + ", ImageBlog=" + ImageBlog + ", VoteBlog=" + VoteBlog + ", admin=" + admin
+				+ ", blogComment=" + blogComment + "]";
 	}
-	
-	
-
 }

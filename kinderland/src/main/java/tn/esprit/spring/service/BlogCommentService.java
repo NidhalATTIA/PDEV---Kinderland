@@ -13,6 +13,8 @@ public interface BlogCommentService {
 	public BlogComment GetBlogCommentById(Long blogCommentId);
 
 	public void UpdateBlogComment(Long blogCommentId, String textBlogComment);
+	
+	public void UpdateBlogCommentVote(Long blogCommentId);
 
 	public void DeleteBlogComment(Long blogCommentId);
 

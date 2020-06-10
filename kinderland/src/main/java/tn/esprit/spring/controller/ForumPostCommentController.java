@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import tn.esprit.spring.entity.ForumPost;
 import tn.esprit.spring.entity.ForumPostComment;
 import tn.esprit.spring.service.ForumPostCommentService;
 
@@ -44,10 +43,10 @@ public class ForumPostCommentController {
 		forumPostCommentService.UpdateForumPostComment((long) ForumPostCommentId, TextPostComment1);
 	}
 	
-	@PutMapping("/Vote-comments/{PostCommentId}/{VoteComment1}")
+	@PutMapping("/vote-comments/{PostCommentId}")
 	@ResponseBody
-	public void EditVoteComment(@PathVariable("PostCommentId")Long PostCommentId) {
-		forumPostCommentService.UpdateForumPostCommentVote((long)PostCommentId);
+	public void EditVoteComment(@PathVariable("PostCommentId")Long ForumPostCommentId) {
+		forumPostCommentService.UpdateForumPostCommentVote(ForumPostCommentId);
 	}
 
 	@DeleteMapping("/rmv-comments/{PostCommentId}")
@@ -55,6 +54,4 @@ public class ForumPostCommentController {
 	public void rmvForumPostComment(@PathVariable("PostCommentId")Long ForumPostCommentId) {
 		forumPostCommentService.DeleteForumPostComment((long) ForumPostCommentId);
 	}
-
-
 }

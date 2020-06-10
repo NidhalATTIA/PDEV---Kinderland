@@ -19,9 +19,4 @@ public interface ForumPostCommentRepository extends CrudRepository<ForumPostComm
     @Query("UPDATE ForumPostComment e SET e.TextComment=:TextPostComment1 where e.IdPostComment=:PostCommentId")
     public void UpdateForumPostComment(@Param("TextPostComment1")String TextPostComment1, @Param("PostCommentId")Long PostCommentId);
 	
-	@Modifying
-    @Transactional
-    @Query("UPDATE ForumPostComment e SET e.VoteComment=VoteComment+1 where e.IdPostComment=:PostCommentId")
-    public void UpdateVoteComment(@Param("PostCommentId")Long PostCommentId);
-
 }

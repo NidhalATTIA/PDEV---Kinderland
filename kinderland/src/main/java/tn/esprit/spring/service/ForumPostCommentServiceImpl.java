@@ -21,8 +21,8 @@ public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 	// Ajout
 	@Override
 	public long AddForumPostComment(ForumPostComment forumpostcomment) {
+		forumpostcomment.setVoteComment(0);
 		forumpostcommentrepository.save(forumpostcomment);
-		//forumpostcomment.setVoteComment(0);
 		return forumpostcomment.getIdPostComment();
 	}
 
@@ -54,7 +54,9 @@ public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 
 	@Override
 	public void UpdateForumPostCommentVote(Long ForumPostCommentId) {
-		forumpostcommentrepository.UpdateVoteComment(ForumPostCommentId);	
+		ForumPostComment forumpostcomment = forumpostcommentrepository.findById(ForumPostCommentId).get();
+		forumpostcomment.setVoteComment(forumpostcomment.getVoteComment() + 1);
+		forumpostcommentrepository.save(forumpostcomment);		
 	}
 	
 

@@ -72,18 +72,22 @@ public class User implements Serializable {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-	@Column(name = "Role")
-	private Role role;
+
+	//@JsonBackReference
+	@OneToOne
+	private Admin Admin;
 	
-
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-
+	@OneToOne
+	private Director director;
+	
+	@OneToOne
+	private Teacher teacher;
+	
+	@OneToOne
+	private Parent parent;
+	
+	@OneToOne
+	private Nurse nurse;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<ForumPost> forumPost;
@@ -91,8 +95,6 @@ public class User implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<ForumPostComment> forumPostComment;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private Set<Post> posts;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Reaction> Reactions;
@@ -108,9 +110,6 @@ public class User implements Serializable {
 	private Set<Friendship> user1;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user2")
 	private Set<Friendship> user2;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	private Set<Child> child;
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
 
 	public String getEtat() {

@@ -60,5 +60,11 @@ public class BlogController {
 		return blogService.GetBlogById((long) BlogIdId);
 	}
 
+	
+	@PutMapping("/vote-Blog/{BlogId}")
+	@ResponseBody
+	public void EditVoteBlog(@PathVariable("BlogId")Long BlogPostId) {
+		blogService.UpdateBlogVote(BlogPostId);
+	}
 
 }
