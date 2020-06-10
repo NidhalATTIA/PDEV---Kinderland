@@ -3,7 +3,17 @@ package tn.esprit.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +26,7 @@ public class UserController {
 	@Autowired
 	UserInterface userService;
 	User u = new User();
-	
+
 	// http://localhost:8081/SpringMVC/servlet/retrieve-all-users
 	@GetMapping("/retrieve-all-users")
 	@ResponseBody
@@ -26,38 +36,32 @@ public class UserController {
 
 	}
 
-	@GetMapping("/add-users")
+	@PostMapping("/add-users")
 	@ResponseBody
-	public void saveUser() {
-		u.setEtat("sss");
-		u.setEmail("email");
-		u.setBDate("bdate");
-		u.setPassword("pass");
-		u.setLastName("cdede");
-		u.setFirstName("hou");
-		
+	public void saveUser(@RequestBody User u) {
+
 		 userService.saveUser(u);
-		
+
 
 	}
-	@GetMapping("/Edit-users")
+	@PutMapping("/Edit-users")
 	@ResponseBody
 	public void EditUser() {
 		u=userService.findById((long) 2);
 		u.setEtat("modif");
 		u.setLastName("look");
-		
-		
+
+
 		 userService.saveUser(u);
-		
+
 
 	}
-	@GetMapping("/rmv-users")
+	@DeleteMapping("/rmv-users")
 	@ResponseBody
 	public void rmvUser() {
 		userService.removeById((long) 2);
 	}
-	
+
 	@GetMapping("/find-user")
 	@ResponseBody
 	public User finduser() {

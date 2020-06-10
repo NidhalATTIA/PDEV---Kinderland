@@ -66,6 +66,46 @@ public class FicheMedical implements Serializable{
 		this.nurse = nurse;
 	}
 
+	public String getSexe() {
+		return sexe;
+	}
+
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
+	}
+
+	public int getTaille() {
+		return taille;
+	}
+
+	public void setTaille(int taille) {
+		this.taille = taille;
+	}
+
+	public int getPoids() {
+		return poids;
+	}
+
+	public void setPoids(int poids) {
+		this.poids = poids;
+	}
+
+	public boolean isMaladieChronique() {
+		return MaladieChronique;
+	}
+
+	public void setMaladieChronique(boolean maladieChronique) {
+		MaladieChronique = maladieChronique;
+	}
+
+	public Child getChild() {
+		return child;
+	}
+
+	public void setChild(Child child) {
+		this.child = child;
+	}
+
 	@Override
 	public String toString() {
 		return "FicheMedical [idfiche=" + idfiche + ", contenu=" + contenu + ", nurse=" + nurse + "]";

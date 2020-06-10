@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.esprit.spring.entity.Child;
+import tn.esprit.spring.entity.Friendship;
 import tn.esprit.spring.entity.Invitation;
-
+import tn.esprit.spring.entity.User;
 import tn.esprit.spring.service.IInvitationService;
 
 @RestController
@@ -24,6 +26,14 @@ public class InvitationController {
 		return list;
 
 	}
+	@GetMapping("/retrieve-all-sugg")
+	@ResponseBody
+	public List<User> getsugg() {
+		List<User> list = invitationService.GetAllSuggestionsJPQL((long)2);
+		return list;
+
+	}
+
 
 
 	
@@ -37,5 +47,10 @@ public class InvitationController {
 	@ResponseBody
 	public Invitation findinv() {
 		return invitationService.GetInvitationById((long) 2);
+	}
+	@GetMapping("/Add-inv")
+	@ResponseBody
+	public Invitation Addinv(Invitation invitation) {
+		return invitationService.AddInvitation(invitation);
 	}
 }
