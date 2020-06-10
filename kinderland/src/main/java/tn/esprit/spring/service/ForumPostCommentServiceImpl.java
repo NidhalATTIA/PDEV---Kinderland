@@ -58,6 +58,10 @@ public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 		forumpostcomment.setVoteComment(forumpostcomment.getVoteComment() + 1);
 		forumpostcommentrepository.save(forumpostcomment);		
 	}
-	
+
+	@Override
+	public List<ForumPostComment> OrderByVote(Long ForumPostCommentId) {
+		return forumpostcommentrepository.findAllByOrderByVoteComment(ForumPostCommentId);
+	}
 
 }

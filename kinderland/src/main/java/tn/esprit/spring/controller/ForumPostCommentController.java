@@ -54,4 +54,11 @@ public class ForumPostCommentController {
 	public void rmvForumPostComment(@PathVariable("PostCommentId")Long ForumPostCommentId) {
 		forumPostCommentService.DeleteForumPostComment((long) ForumPostCommentId);
 	}
+	
+	@GetMapping("/Order-By-Vote-all-comments/{PostId}")
+	@ResponseBody
+	public List<ForumPostComment> getForumPostCommentByVote(@PathVariable("PostId")Long ForumPostId) {
+		List<ForumPostComment> list = forumPostCommentService.OrderByVote(ForumPostId);
+		return list;
+	}
 }

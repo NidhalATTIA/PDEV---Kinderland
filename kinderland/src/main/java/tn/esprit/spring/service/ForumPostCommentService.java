@@ -16,5 +16,7 @@ public interface ForumPostCommentService {
 	public void UpdateForumPostCommentVote(Long ForumPostCommentId);
 
 	public void DeleteForumPostComment(Long ForumPostCommentId);
+	
+	public List<ForumPostComment> OrderByVote(Long ForumPostCommentId);
 
 }
