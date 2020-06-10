@@ -5,11 +5,13 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entity.Blog;
 import tn.esprit.spring.entity.Kindergarden;
 import tn.esprit.spring.entity.Subscribe;
+import tn.esprit.spring.entity.User;
 import tn.esprit.spring.repository.BlogRepository;
 import tn.esprit.spring.repository.KindergardenRepository;
 import tn.esprit.spring.repository.SubscribeRepository;
@@ -24,9 +26,15 @@ public class SubscribeServiceImpl implements SubscribeService {
 
 	// Ajout
 	@Override
-	public Long AddSubscriber(Subscribe blog) {
+	public Long AddSubscriber(Subscribe blog,int iduser) {
+		if (Kindergardenrepository.getReclamationbyidUser(iduser)>=5){
+			return blog.getIdSubscribe();
+		}
+		else {
 	  Kindergardenrepository.save(blog);
+		}
 	  return blog.getIdSubscribe();
+	  
 	}
 	
 	// Affichage all

@@ -5,11 +5,12 @@ import java.util.List;
 import tn.esprit.spring.entity.Blog;
 import tn.esprit.spring.entity.Kindergarden;
 import tn.esprit.spring.entity.Subscribe;
+import tn.esprit.spring.entity.User;
 
 
 
 public interface SubscribeService {
-	public Long AddSubscriber(Subscribe blog);
+	public Long AddSubscriber(Subscribe blog,int iduser);
 	
 	public List<Subscribe> GetAllKindergardenJPQL();
 	

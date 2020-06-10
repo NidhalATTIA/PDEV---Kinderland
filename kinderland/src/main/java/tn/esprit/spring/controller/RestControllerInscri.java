@@ -12,56 +12,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.esprit.spring.entity.Child;
 import tn.esprit.spring.entity.Event;
 import tn.esprit.spring.entity.Kindergarden;
 import tn.esprit.spring.entity.Planning;
 import tn.esprit.spring.entity.Subscribe;
+import tn.esprit.spring.service.ChildInscriService;
 import tn.esprit.spring.service.KindergardenService;
 import tn.esprit.spring.service.SubscribeService;
 import tn.esprit.spring.service.TeacherService;
 
 @RestController
-public class RestControllerSubscribe {
+public class RestControllerInscri {
 
 	@Autowired
-	SubscribeService teacherService;
+	ChildInscriService teacherService;
 	/*--------------------------------Events------------------------------------------*/
 	
 	// http://localhost:8081/SpringMVC/servlet/addKindergarden
 	// {"idEvent":5,"titleevent":"abc","descriptionEvent":"def"}
-	@PostMapping("/addSubscriber/{id}")
+	@PostMapping("/addChild")
 	@ResponseBody
-	public Subscribe AddKindergarden(@RequestBody Subscribe event,@PathVariable("id") int iduser) {
-		teacherService.AddSubscriber(event,iduser);
+	public Child AddKindergarden(@RequestBody Child event) {
+		teacherService.AddChild(event);
 		return event;
 	}
 
 	// http://localhost:8081/SpringMVC/servlet/getAllKindergardens
-	@GetMapping(value = "/getAllSubscriptions")
+	@GetMapping(value = "/getAllChildren")
 	@ResponseBody
-	public List<Subscribe> GetAllKindergardenJPQL() {
+	public List<Child> GetAllKindergardenJPQL() {
 
 		return teacherService.GetAllKindergardenJPQL();
 	}
 
 
-	/*// http://localhost:8081/SpringMVC/servlet/updateEvent/2
-		@PutMapping(value = "/updateEventJPQL/{id}") 
-		@ResponseBody
-		public void updateEventByIdJPQL(@RequestBody Event event,@PathVariable("id") int eventId) {
-			teacherService.updateEventByIdJPQL(eventId,event);
-		}*/
-
-	// http://localhost:8081/SpringMVC/servlet/deleteEvent/2
-	@DeleteMapping(value = "/deleteSubscription/{id}")
-	@ResponseBody
-	public void DeleteKindergarden(@PathVariable("id") Long eventId) {
-		teacherService.DeleteSubscriber(eventId);
-	}
-	/*--------------------------------Plannings------------------------------------------*/
-
-	public static void main(String[] args) {
-		//Subscribe
-	}
 
 }

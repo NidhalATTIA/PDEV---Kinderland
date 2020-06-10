@@ -20,8 +20,8 @@ public class IControllerSubscribeImpl {
 	
 	
 
-	public Long AddKindergarden(Subscribe event){
-		teacherService.AddSubscriber(event);
+	public Long AddKindergarden(Subscribe event,int iduser){
+		teacherService.AddSubscriber(event,iduser);
 		return event.getIdSubscribe();
 	}
 

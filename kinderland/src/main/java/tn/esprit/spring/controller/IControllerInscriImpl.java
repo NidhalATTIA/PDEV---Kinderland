@@ -5,28 +5,29 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import tn.esprit.spring.entity.Child;
 import tn.esprit.spring.entity.Event;
 import tn.esprit.spring.entity.Kindergarden;
+import tn.esprit.spring.entity.Subscribe;
+import tn.esprit.spring.service.ChildInscriService;
 import tn.esprit.spring.service.KindergardenService;
-import tn.esprit.spring.service.RechercheService;
+import tn.esprit.spring.service.SubscribeService;
 import tn.esprit.spring.service.TeacherService;
 
 @Controller
-public class IControllerKindergardenImpl {
+public class IControllerInscriImpl {
 	@Autowired
-	KindergardenService teacherService;
-	RechercheService Rservice;
-	
+	ChildInscriService teacherService;
 	
 	
 	
 
-	public Long AddKindergarden(Kindergarden event){
-		teacherService.AddKindergarden(event);
-		return event.getIdKindergarden();
+	public Long AddKindergarden(Child event){
+		teacherService.AddChild(event);
+		return event.getId();
 	}
 
-	public List<Kindergarden> GetAllKindergardenJPQL(){
+	public List<Child> GetAllKindergardenJPQL(){
 		return teacherService.GetAllKindergardenJPQL();
 	}
 	/*public int updateEvent (int eventId,Event event){
@@ -40,13 +41,6 @@ public class IControllerKindergardenImpl {
 	}
 	*/
 	
-	public void DeleteKindergarden(Long eventId){
-		teacherService.DeleteKindergarden(eventId);
-	}
-	public List<Kindergarden> pp1() {
-		
-		return Rservice.pp()   ;
-	}
 	
 	
 	
