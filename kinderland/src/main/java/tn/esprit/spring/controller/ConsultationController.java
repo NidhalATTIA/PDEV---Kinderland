@@ -64,7 +64,7 @@ public class ConsultationController {
 	
 	@PutMapping("/Edit-consultation")
 	@ResponseBody
-	public void EditConsultation(long id) {
+	public void EditConsultation( long id) {
 	Consultation	con = consultationService.GetConsultationById(id);
 		consultationService.UpdateConsultation(con);
 	}
