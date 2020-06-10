@@ -2,6 +2,7 @@ package tn.esprit.spring.controller;
 
 import java.util.List;
 
+import org.ocpsoft.rewrite.annotation.Join;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ import tn.esprit.spring.entity.User;
 import tn.esprit.spring.service.UserInterface;
 
 @RestController
+@Join(path = "/", to = "/welcome.jsf")
 public class UserController {
 
 	@Autowired
