@@ -74,19 +74,15 @@ public class User implements Serializable {
 	}
 
 	//@JsonBackReference
-	@OneToOne
+	
 	private Admin Admin;
 	
-	@OneToOne
 	private Director director;
 	
-	@OneToOne
 	private Teacher teacher;
 	
-	@OneToOne
 	private Parent parent;
 	
-	@OneToOne
 	private Nurse nurse;
 	
 	@OneToMany(cascade = CascadeType.ALL)

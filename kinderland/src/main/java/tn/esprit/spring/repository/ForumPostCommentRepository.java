@@ -19,4 +19,7 @@ public interface ForumPostCommentRepository extends CrudRepository<ForumPostComm
     @Query("UPDATE ForumPostComment e SET e.TextComment=:TextPostComment1 where e.IdPostComment=:PostCommentId")
     public void UpdateForumPostComment(@Param("TextPostComment1")String TextPostComment1, @Param("PostCommentId")Long PostCommentId);
 	
+	@Query("SELECT f FROM ForumPostComment f  join ForumPost u on f.forumPost=u.IdPost WHERE u.IdPost=:PostCommentId ORDER BY f.VoteComment DESC")
+	 public List<ForumPostComment> findAllByOrderByVoteComment(@Param("PostCommentId")Long PostCommentId);
+	
 }
