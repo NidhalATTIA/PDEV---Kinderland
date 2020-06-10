@@ -13,6 +13,8 @@ public interface BlogService {
 	public Blog GetBlogById(Long BlogId);
 
 	public void UpdateBlog(Long BlogId, String textBlog);
+	
+	public void UpdateBlogVote(Long BlogId);
 
 	public void DeleteBlog(Long BlogId);
 

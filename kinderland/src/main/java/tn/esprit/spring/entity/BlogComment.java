@@ -37,8 +37,12 @@ public class BlogComment implements Serializable {
 	@CreationTimestamp
 	private Date DatePost;
 	
+	@Column(name = "VoteBlogComment")
+	private int VoteBlogComment;
+	
 	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<Blog> blog;
+	
 	
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------	
 
@@ -87,21 +91,21 @@ public class BlogComment implements Serializable {
 		this.blog = blog;
 	}
 	
-	
-	// ---------------------------------------------------- ToString ---------------------------------------------------------------
+	public int getVoteBlogComment() {
+		return VoteBlogComment;
+	}
 
-	
+	public void setVoteBlogComment(int voteBlogComment) {
+		VoteBlogComment = voteBlogComment;
+	}
+
+	// ---------------------------------------------------- ToString ---------------------------------------------------------------
 
 	@Override
 	public String toString() {
 		return "BlogComment [IdBlogComment=" + IdBlogComment + ", TextComment=" + TextComment + ", ImageComment="
-				+ ImageComment + ", DatePost=" + DatePost + "]";
+				+ ImageComment + ", DatePost=" + DatePost + ", VoteBlogComment=" + VoteBlogComment + ", blog=" + blog
+				+ "]";
 	}
-	
-
-	
-	
-	
-	
 
 }

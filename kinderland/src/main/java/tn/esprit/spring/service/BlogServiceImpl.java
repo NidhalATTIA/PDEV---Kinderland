@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entity.Blog;
+import tn.esprit.spring.entity.ForumPost;
 import tn.esprit.spring.repository.BlogRepository;
 
 @Service
@@ -21,6 +22,7 @@ public class BlogServiceImpl implements BlogService {
 	// Ajout
 	@Override
 	public long AddBlog(Blog blog) {
+		blog.setVoteBlog(0);
 		blogrepository.save(blog);
 		return blog.getIdBlog();
 	}
@@ -49,6 +51,14 @@ public class BlogServiceImpl implements BlogService {
 	@Override
 	public void DeleteBlog(Long BlogId) {
 		blogrepository.deleteById(BlogId);
+	}
+
+	@Override
+	public void UpdateBlogVote(Long BlogId) {
+		Blog blog = blogrepository.findById(BlogId).get();
+		blog.setVoteBlog(blog.getVoteBlog() + 1);
+		blogrepository.save(blog);
+		
 	}
 
 }

@@ -16,9 +16,4 @@ public interface ForumPostRepository extends CrudRepository<ForumPost, Long>{
     public void UpdateForumPost(@Param("TextPost1")String TextPost, @Param("PostId")Long PostId);
 	
 
-    /*@Query("Select * FROM ForumPost fp join ForumPostComment u on fp.forumPostComment=u.IdPostComment join VoteComment "
-    		+ "vc on u.forumPostComment=vc.IdVoteComment ORDERBY max(count()) WHERE u.IdPostComment=:PostCommentId")
-    public void AfficheForumPostParVote(@Param("TextPost1")String TextPost, @Param("PostId")Long PostId);
-    */
-
 }
