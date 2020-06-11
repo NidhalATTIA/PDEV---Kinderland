@@ -1,0 +1,19 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<ui:compositionxmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/template.xhtml">
+	<ui:paramname="page_name" value="login" />
+	<ui:definename="menu">
+	<h:formid="form">
+	<b>Connexion</b>
+	<h:panelGridcolumns="2">
+	<h:outputTextvalue="Login (Email)" />
+	<h:inputTextvalue="" />
+	<h:outputTextvalue="Mot de passe" />
+	<h:inputSecretvalue="" />
+	<h:commandButtonid="btn" value="Connexion" action="" />
+	<h:messagefor="btn"/>
+	</h:panelGrid>
+	</h:form>
+	</ui:define>
+	</ui:composition>

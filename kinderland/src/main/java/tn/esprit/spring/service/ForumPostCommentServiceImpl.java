@@ -5,10 +5,12 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entity.ForumPostComment;
 import tn.esprit.spring.repository.ForumPostCommentRepository;
 
+@Service
 public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 
 	@Autowired
@@ -18,8 +20,10 @@ public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 
 	// Ajout
 	@Override
-	public ForumPostComment AddForumPostComment(ForumPostComment forumpostcomment) {
-		return forumpostcommentrepository.save(forumpostcomment);
+	public long AddForumPostComment(ForumPostComment forumpostcomment) {
+		forumpostcomment.setVoteComment(0);
+		forumpostcommentrepository.save(forumpostcomment);
+		return forumpostcomment.getIdPostComment();
 	}
 
 	// Affichage all
@@ -38,15 +42,26 @@ public class ForumPostCommentServiceImpl implements ForumPostCommentService {
 
 	// Modification
 	@Override
-	public ForumPostComment UpdateForumPostComment(ForumPostComment forumpostcomment) {
-		return forumpostcommentrepository.save(forumpostcomment);
+	public void UpdateForumPostComment(Long ForumPostCommentId,String textForumPostcomment) {
+		forumpostcommentrepository.UpdateForumPostComment(textForumPostcomment, ForumPostCommentId);
 	}
 
 	// Supression
 	@Override
 	public void DeleteForumPostComment(Long ForumPostCommentId) {
 		forumpostcommentrepository.deleteById(ForumPostCommentId);
+	}
 
+	@Override
+	public void UpdateForumPostCommentVote(Long ForumPostCommentId) {
+		ForumPostComment forumpostcomment = forumpostcommentrepository.findById(ForumPostCommentId).get();
+		forumpostcomment.setVoteComment(forumpostcomment.getVoteComment() + 1);
+		forumpostcommentrepository.save(forumpostcomment);		
+	}
+
+	@Override
+	public List<ForumPostComment> OrderByVote(Long ForumPostCommentId) {
+		return forumpostcommentrepository.findAllByOrderByVoteComment(ForumPostCommentId);
 	}
 
 }

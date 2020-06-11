@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.entity.Blog;
 import tn.esprit.spring.entity.BlogComment;
 import tn.esprit.spring.repository.BlogCommentRepository;
 
@@ -20,8 +21,10 @@ public class BlogCommentServiceImpl implements BlogCommentService {
 
 	// Ajout
 	@Override
-	public BlogComment AddBlogComment(BlogComment blogcomment) {
-		return blogcommentrepository.save(blogcomment);
+	public long AddBlogComment(BlogComment blogcomment) {
+		blogcomment.setVoteBlogComment(0);
+		blogcommentrepository.save(blogcomment);
+		return blogcomment.getIdBlogComment();
 	}
 
 	// Affichage all
@@ -42,14 +45,21 @@ public class BlogCommentServiceImpl implements BlogCommentService {
 
 	// Modification
 	@Override
-	public BlogComment UpdateBlogComment(BlogComment blogcomment) {
-		return blogcommentrepository.save(blogcomment);
+	public void UpdateBlogComment(Long blogCommentId, String textBlogComment) {
+		blogcommentrepository.UpdateBlogComment(textBlogComment, blogCommentId);
 	}
 
 	// Supression
 	@Override
 	public void DeleteBlogComment(Long BlogCommentId) {
 		blogcommentrepository.deleteById(BlogCommentId);
+	}
+
+	@Override
+	public void UpdateBlogCommentVote(Long blogCommentId) {
+		BlogComment blogComment = blogcommentrepository.findById(blogCommentId).get();
+		blogComment.setVoteBlogComment(blogComment.getVoteBlogComment() + 1);
+		blogcommentrepository.save(blogComment);
 	}
 
 	

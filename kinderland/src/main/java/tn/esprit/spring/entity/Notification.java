@@ -23,6 +23,30 @@ public class Notification implements Serializable{
 	
 	@ManyToOne
 	User userdestinataire;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getContenu() {
+		return contenu;
+	}
+
+	public void setContenu(String contenu) {
+		this.contenu = contenu;
+	}
+
+	public User getUserdestinataire() {
+		return userdestinataire;
+	}
+
+	public void setUserdestinataire(User userdestinataire) {
+		this.userdestinataire = userdestinataire;
+	}
 	
 	
 }

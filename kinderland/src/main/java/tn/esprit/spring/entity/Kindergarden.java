@@ -15,6 +15,16 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Kindergarden implements Serializable {
+<<<<<<< HEAD
+=======
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+>>>>>>> db072572ab2ddc5e1241006b1022f72327ab9af6
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long IdKindergarden;
@@ -35,6 +45,7 @@ public class Kindergarden implements Serializable {
 	@Column(name = "cost")
 	private float Cost;
 
+<<<<<<< HEAD
 	@OneToOne
 	private Planning planning; 
 	
@@ -43,6 +54,13 @@ public class Kindergarden implements Serializable {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Event> Events;
+=======
+	
+	@OneToOne
+	private Director director;
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<Child> child;
+>>>>>>> db072572ab2ddc5e1241006b1022f72327ab9af6
 	/*
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="kindergardens")
 	private Set<Teacher> Teachers;

@@ -1,7 +1,7 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -12,6 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 
 @Entity
@@ -29,10 +33,16 @@ public class BlogComment implements Serializable {
 	private String ImageComment;
 	
 	@Column(name = "DateComment")
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp
 	private Date DatePost;
+	
+	@Column(name = "VoteBlogComment")
+	private int VoteBlogComment;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<Blog> blog;
+	
 	
 	// -------------------------------------------------------- Getters and Setters ------------------------------------------------	
 
@@ -81,21 +91,21 @@ public class BlogComment implements Serializable {
 		this.blog = blog;
 	}
 	
-	
-	// ---------------------------------------------------- ToString ---------------------------------------------------------------
+	public int getVoteBlogComment() {
+		return VoteBlogComment;
+	}
 
-	
+	public void setVoteBlogComment(int voteBlogComment) {
+		VoteBlogComment = voteBlogComment;
+	}
+
+	// ---------------------------------------------------- ToString ---------------------------------------------------------------
 
 	@Override
 	public String toString() {
 		return "BlogComment [IdBlogComment=" + IdBlogComment + ", TextComment=" + TextComment + ", ImageComment="
-				+ ImageComment + ", DatePost=" + DatePost + "]";
+				+ ImageComment + ", DatePost=" + DatePost + ", VoteBlogComment=" + VoteBlogComment + ", blog=" + blog
+				+ "]";
 	}
-	
-
-	
-	
-	
-	
 
 }

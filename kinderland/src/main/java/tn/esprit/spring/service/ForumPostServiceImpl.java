@@ -5,10 +5,13 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entity.ForumPost;
+import tn.esprit.spring.entity.ForumPostComment;
 import tn.esprit.spring.repository.ForumPostRepository;
 
+@Service
 public class ForumPostServiceImpl implements ForumPostService {
 
 	@Autowired
@@ -18,8 +21,10 @@ public class ForumPostServiceImpl implements ForumPostService {
 
 	// Ajout
 	@Override
-	public ForumPost AddForumPost(ForumPost forumpost) {
-		return forumpostrepository.save(forumpost);
+	public long AddForumPost(ForumPost forumpost) {
+		forumpost.setVotePost(0);
+		forumpostrepository.save(forumpost);
+		return forumpost.getIdPost();
 	}
 
 	// Affichage all
@@ -38,14 +43,22 @@ public class ForumPostServiceImpl implements ForumPostService {
 
 	// Modification
 	@Override
-	public ForumPost UpdateForumPost(ForumPost forumpost) {
-		return forumpostrepository.save(forumpost);
+	public void UpdateForumPost(Long forumPostId, String textForumPost) {
+		forumpostrepository.UpdateForumPost(textForumPost, forumPostId);
 	}
-
+	
 	// Supression
 	@Override
 	public void DeleteForumPost(Long ForumPostId) {
 		forumpostrepository.deleteById(ForumPostId);
+	}
+
+	@Override
+	public void UpdateForumPostVote(Long forumPostId) {
+		ForumPost forumpost = forumpostrepository.findById(forumPostId).get();
+		forumpost.setVotePost(forumpost.getVotePost() + 1);
+		forumpostrepository.save(forumpost);		
+		
 	}
 
 }

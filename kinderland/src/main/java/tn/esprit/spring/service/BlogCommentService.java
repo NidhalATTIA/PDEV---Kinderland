@@ -5,14 +5,17 @@ import java.util.List;
 import tn.esprit.spring.entity.BlogComment;
 
 public interface BlogCommentService {
-	public BlogComment AddBlogComment(BlogComment blogcomment);
+	
+	public long AddBlogComment(BlogComment blogcomment);
 
 	public List<BlogComment> GetAllBlogCommentJPQL();
 
-	public BlogComment GetBlogCommentById(Long BlogCommentId);
+	public BlogComment GetBlogCommentById(Long blogCommentId);
 
-	public BlogComment UpdateBlogComment(BlogComment blogcomment);
+	public void UpdateBlogComment(Long blogCommentId, String textBlogComment);
+	
+	public void UpdateBlogCommentVote(Long blogCommentId);
 
-	public void DeleteBlogComment(Long BlogCommentId);
+	public void DeleteBlogComment(Long blogCommentId);
 
 }

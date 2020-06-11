@@ -25,20 +25,30 @@ public class User implements Serializable {
 	private long IdUser;
 
 	@Column(name = "firstName")
-	private String FirstName;
+	private String firstName;
 
 	@Column(name = "LastName")
-	private String LastName;
-
+	private String lastName;
+	
+	@Column(name = "Password")
+	private String Password;
 	/*
 	 * @Enumerated(EnumType.STRING) Role role;
 	 */
 
+	public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
+	}
+
 	@Column(name = "Phone")
 	private int Phone;
 
-	@Column(name = "Mail")
-	private String Mail;
+	@Column(name = "Email")
+	private String email;
 
 	@Column(name = "BirthDate")
 	private String BDate;
@@ -46,28 +56,48 @@ public class User implements Serializable {
 	@Column(name = "Etat")
 	private String Etat;
 	
+	@Column(name = "isActive")
+	private Boolean isActive;
+	
+
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
 	//@JsonBackReference
-	@OneToOne
+	
 	private Admin Admin;
 	
-	@OneToOne
 	private Director director;
 	
-	@OneToOne
 	private Teacher teacher;
 	
-	@OneToOne
 	private Parent parent;
 	
-	@OneToOne
 	private Nurse nurse;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<ForumPost> forumPost;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<ForumPostComment> forumPostComment;
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Reaction> Reactions;
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="userdestinataire")
 	private Set<Notification> Notifications;
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="sender")
 	private Set<Invitation> Sender;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="reciver")
@@ -95,19 +125,19 @@ public class User implements Serializable {
 	}
 
 	public String getFirstName() {
-		return FirstName;
+		return firstName;
 	}
 
 	public void setFirstName(String firstName) {
-		this.FirstName = firstName;
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
 
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.lastName = lastName;
 	}
 
 	public int getPhone() {
@@ -118,12 +148,12 @@ public class User implements Serializable {
 		Phone = phone;
 	}
 
-	public String getMail() {
-		return Mail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setMail(String mail) {
-		Mail = mail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getBDate() {
@@ -142,8 +172,8 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [idUser=" + IdUser + ", firstName=" + FirstName + ", LastName=" + LastName + ", Phone=" + Phone
-				+ ", Mail=" + Mail + ", BDate=" + BDate + "]";
+		return "User [idUser=" + IdUser + ", firstName=" + firstName + ", LastName=" + lastName + ", Phone=" + Phone
+				+ ", Mail=" + email + ", BDate=" + BDate + "]";
 	}
 	
 }

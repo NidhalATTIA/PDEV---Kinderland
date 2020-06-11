@@ -23,6 +23,8 @@ public class Admin  implements Serializable{
 	// -------------------------------------------------------- Getters and Setters --------------------------------------------------
 
 
+	 public Admin(){}
+
 	public Admin(int id) {
 		
 		this.id = id;
@@ -36,9 +38,7 @@ public class Admin  implements Serializable{
 		this.id = id;
 	}
 	
-	//@JsonBackReference
-	@OneToOne(mappedBy="Admin")
-	private User user; 
+
 
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Blog> blog;
