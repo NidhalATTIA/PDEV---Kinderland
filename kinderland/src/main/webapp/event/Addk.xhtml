@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/templaten.xhtml">
+	<ui:param name="page_name" value="addPlan" />
+	<ui:define name="content">
+	<div class="main-body">
+                            
+<div class="page-wrapper">
+                                <!-- Page-header start -->
+                                
+<div class="page-header">
+                                    
+<div class="row align-items-end">
+                                        
+
+                                        
+<div class="col-lg-4">
+                                              
+<div class="page-header-breadcrumb">
+                                                
+<ul class="breadcrumb-title">
+                                                
+<li class="breadcrumb-item">
+
+                                                        <a href="index-1.htm"> <i class="feather icon-home" /> </a>
+                                                  </li>
+                                                    
+<li class="breadcrumb-item"><a href="#!"> Events </a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                    <!-- Page body start -->
+            <h:form>                         
+<div class="page-body">
+                                        
+<div class="row">
+                                            
+<div class="col-sm-12">
+                                                <!-- Default Date-Picker card start -->
+                   
+
+                                                                
+
+    
+                                                     <!-- Date-Dropper card start -->
+       
+                                                                                     
+<div class="card">
+                                                    
+<div class="card-header">
+                                                        
+<h2>Add New Event</h2>
+                                                    
+                                                    </div>
+                                                  
+<div class="card-block">
+                                                        
+<div class="row">
+                                                            
+<div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Title</h4>
+                                                             
+
+    <h:inputText  class="form-control" type="Text"   value="#{AccuilController.titleEvent}"></h:inputText>
+                                                            </div>
+                                                            
+                                                            <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Category </h4>
+                                                                
+
+    <h:inputText  class="form-control" type="text"   value="#{AccuilController.category}"></h:inputText>
+                                                            </div>
+                                                            
+<div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Description</h4>
+                                                                
+
+    <h:inputText  class="form-control" type="text"   value="#{AccuilController.descriptionEvent}"></h:inputText>
+                                                            </div>
+                                                            
+                                                            <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Photo</h4>
+                                                                
+
+    <h:inputText  class="form-control" type="text"   value="#{AccuilController.photoEvent}"></h:inputText>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Date</h4>
+                                                                
+
+    <h:inputText  class="form-control" type="date"   value="#{AccuilController.dateEvent}"><f:convertDateTime pattern="yyyy-MM-dd"/> </h:inputText>
+                                                            </div>
+                                                           
+                                                            <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Number of Places </h4>
+                                                                
+
+    <h:inputText  class="form-control" type="text"   value="#{AccuilController.nbrplacesEvent}"></h:inputText>
+                                                            </div>
+
+                                                            
+  
+                                                            
+
+                                                        </div>
+                                                        
+                                                        
+                                                    
+                    <h:commandButton class="btn btn-success" action="#{AccuilController.AddIng()}" value="Add Event"/>
+                 
+                                                  
+                                               
+                                                               
+
+
+                                                    </div>
+                                                </div>
+                                             
+                                                <!-- Date-Dropper card end -->
+                                               
+
+
+                                                                     
+
+                                                            
+                                                      
+
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                    
+
+
+                                                                </div>
+                                                                </h:form>
+                                                            </div>
+                                                        </div>
+                                                  
+                                
+                                
+                          
+                            <!-- Main-body end -->
+	
+           
+
+                                       
+                                               
+                                               
+                                                        
+                                                      
+                                                      
+  
+                                                      
+                                                    
+	</ui:define>
+	</ui:composition>
+	
+
