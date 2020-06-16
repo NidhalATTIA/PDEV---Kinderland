@@ -1,0 +1,65 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+		<!--BEGIN : TP1 JSF Introduction Login -->
+		<h:panelGroup>
+			<h:form>
+<h:outputText value="Online Now : #{UserController.login}" />
+|
+<h:commandLink value="Déconnexion"
+					action="#{UserController.doLogout()}" />
+			</h:form>
+		</h:panelGroup>
+		<h:panelGroup columns="1">
+			<h:form>
+				<table>
+				
+				
+					<tr>
+						<td><h:outputText value="Id"></h:outputText></td>
+						<td><h:outputText  value="#{UserController.reclamation.idReclamation}"></h:outputText ></td>
+					</tr>
+						<tr>
+						<td><h:outputText value="Titre De Reclamation"></h:outputText></td>
+                 <td><h:outputText  value="#{UserController.reclamation.titleReclamation}"></h:outputText ></td>				
+                 	</tr>
+                 	
+                 	   			
+                 	<tr>
+						<td><h:outputText value="Text de Reclamation"></h:outputText></td>
+                 <td><h:outputText  value="#{UserController.reclamation.textReclamation}"></h:outputText ></td>				
+                 	</tr>		
+					<tr>
+						<td><h:outputText value="Image"></h:outputText></td>
+                 <td><h:outputText  value="#{UserController.reclamation.imageReclamation}"></h:outputText ></td>				
+                 	</tr>
+              
+                 	<tr>
+						<td><h:outputText value="Date De Reclamation"></h:outputText></td>
+                 <td><h:outputText  value="#{UserController.reclamation.dateReclamation}"></h:outputText ></td>				
+                 	</tr>
+                 	
+                 	<tr>
+                 	<td>
+                 	<h:form>
+                 
+                 <h:commandButton
+							action="#{UserController.Treat(UserController.reclamation.idReclamation)}"
+							value="Ok" />
+							
+							
+                 </h:form>
+			</td>
+			</tr>
+				
+		
+
+				</table>
+			</h:form>
+		</h:panelGroup>
+	</ui:define>
+</ui:composition>
