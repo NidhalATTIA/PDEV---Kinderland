@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/templaten.xhtml">
+<ui:param name="page_name" value="Accueil" />
+<ui:define name="content">
+	<!-- BEGIN : TP1 JSF Introduction Login -->
+	<h:panelGroup>
+	<h:form>
+	
+	
+	<h:outputText value="Online Now : #{AccuilController.login}" />
+	<h:commandLink value="*" action="#{AccuilController.doLogout()}" />
+	
+	</h:form>
+	
+	
+	</h:panelGroup>
+
+
+		
+<div id="wrapper">
+   <div id="branding">
+   <center>
+   <h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/logo.png" /></center>
+   <ul class="topNav">
+	    <li><a href="#" class="topNavAct">HOME &amp; FEED</a></li>
+		<li><a href="#">CONSULTATIONS</a></li>
+		<li><a href="#">DISEASES</a></li>
+		<li><a href="http://localhost:8081/SpringMVC/pages/nurse/medicalfile.jsf" >Kindergarden</a></li>
+		<li><a href="#">APPOINTMENT</a></li>
+		<li><a href="#">ONLINE ONLY</a></li>
+		<li><a href="#">PROFILE</a></li>
+		<li><a href="#">ABOUT US</a></li>
+		<li><a href="#">FORUM</a></li>
+		<li><h:link value="Logout" outcome="#{AccuilController.doLogout()}" /></li>
+        
+	  </ul><br class="clear" />
+   </div>
+   <div id="contant">
+    <div class="contant_1">
+	<div class="contant_1_left">
+	  <h2>
+       Welcome to Kinderland !
+       <span>Thursday 11 2020 | (2) Comments</span>
+      </h2>
+	  <h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/c1_i1.png" width="277" height="266" alt="" />
+	  <h3>What is "Kinderland" ?</h3>
+	  <br class="clear bottomClear" />
+	  <p>The aim of this project is to create a social network to solve this problem and to facilitate the daily life of parents as well as kindergartens. Institutes will be able to create profiles for their kindergartens. Therefore, parents can easily consult and register their children. They can also leave feedback and a rating for each institute.<br /><br />
+
+ 		As you know, the digital world is essential today in everyday life. Many parents have a lot to manage and do not have the time to find a suitable kindergarten for their children and keep track of their routes properly Parents are looking to find a trustworthy kindergarten. 
+		How to get the opinion of other parents and how to know if it is a good daycare? How to be able to register their children quickly and remotely without wasting time?
+		Our role is to find a solution to all these problems and provide the best experience for parents.
+ 		</p><br /><br />
+	There are many informations about us here : <a href="#">See more </a>
+      <p class="quoteBar">Certified the best application on the Tunisian market. You can try it by yourself but there is some beta content for now. Keep us updated if you encouter some bugs.</p>
+	  
+	 <br></br>
+	  	  	  	  
+      <h3>List of the Medical Files</h3>
+	<h:dataTable  value="#{FicheMedicalController.getFicheMedicals()}" var="employe" border="1">
+	<h:column><f:facet name="header"><h:outputText value="-- Firstname --" /></f:facet>
+	<h:outputText value="#{employe.child.firstname}" /></h:column>
+	<h:column><f:facet name="header"><h:outputText value="-- LastName --" /></f:facet>
+	<h:outputText value="#{employe.child.lastname}" /></h:column></h:dataTable>
+	
+	  
+	  </div>
+	<div class="sideBar">
+	  <div class="sideBarListBox">
+	   <h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/sideBarListBoxTop.png" alt="" width="240" height="10" />
+	   <ul>
+         <li><a href="#" >Kindergartens List</a></li>
+         <li><a href="#">Staff List</a></li>
+		 <li><a href="#">Top 10 in the country</a></li>
+		 <li><a href="#">Top 10 regional</a></li>
+		 <li><a href="#">Stats about the health of the childrens</a></li>
+		 <li><a href="#">Social Media</a></li>
+		 <li><a href="#">FAQ</a></li>
+        </ul>
+	   <h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/sideBarListBoxBottom.png" alt="" width="240" height="10" />
+	  </div>
+	  <div class="sideBarItem">
+	  <h3>Blog</h3>
+	  <ul>
+         <li><a href="#">Category One</a></li>
+         <li class="cat002"><a href="#" >There are many</a></li>
+         <li class="cat003"><a href="#">New posts available</a></li>
+		 <li class="cat003"><a href="#">addresses</a></li>
+		 <li class="cat003"><a href="#">complains</a></li>
+		 <li class="cat003"><a href="#">courses</a></li>
+		 <li class="cat003"><a href="#">archive</a></li>
+        </ul>
+	  </div>
+	<div>
+  
+	  
+	  </div>
+	  </div>
+    <br class="clear" />
+   </div>
+   </div>
+   <div class="midBox1">
+		 <span><h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/c2_i6.png" width="303" height="420" alt="" /></span>
+	     <div class="midBox1Top">
+		 <a href="#"><h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/c2_i2.png" width="133" height="40" alt="" /></a>
+		 <a href="#"><h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/c2_i3.png" width="84" height="40" alt=""  /></a>
+		 <a href="#"><h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/c2_i4.png" width="93" height="40" alt=""  /></a>
+		 <a href="#"><h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/c2_i5.png" width="101" height="38" alt=""  /></a>		 </div>
+		 <div class="midBox1Bottom">
+		 </div>
+		 <br class="clear" />
+	  </div>
+   <div class="midBox2">
+	  <div class="midBox2L">
+	<br></br>
+		 <h3>Contact Us !<br /> don't hesitate !</h3>
+	  </div>
+	  <h:graphicImage value="http://${request.serverName}:${request.serverPort}${request.contextPath}/c3_i7.png" width="460" height="237" alt="" />
+   </div>
+   <div id="footer">
+    <div class="footerForm">
+	  <h3>Send us a message !</h3>
+	   <h4>we would love to hear from you</h4>
+	  <div class="footerFormR">
+	   <p><label>Name*:</label><input name="Name" type="text" class="footerInputArea" /></p>
+	   <p><label>Email*:</label><input name="Email" type="text" class="footerInputArea" /></p>
+	   <p><label>Phone Number:</label><input name="Number" type="text" class="footerInputArea" /></p>
+	  </div>
+	  <div class="footerFormR">
+	   <p><label>Message:</label> <textarea name="" class="footertextarea" rows="2" cols="3"></textarea>
+	   </p>
+        <input name="" type="button" class="footerSubmit" />
+	  </div>
+	  <br class="clear" />
+	  </div>
+	<br class="clear" />
+   </div>
+ </div>
+    <div id="footerContainer">
+    <p>
+	 <label>Designed by <a href="https://github.com/NidhalATTIA/PDEV---Kinderland">Team Epsilon - 4 INFO B2</a></label>
+	 <span>Copyright 2020 EPSILON P-DEV. All Rights Reserved</span>
+	</p>
+   </div>
+
+</ui:define>
+</ui:composition>

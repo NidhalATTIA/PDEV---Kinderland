@@ -1,0 +1,85 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml">
+	<ui:param name="page_name" value="Edit" />
+	<ui:define name="content">
+		<!--BEGIN : TP1 JSF Introduction Login -->
+	<h:panelGroup columns="2"><h:form>
+	
+	
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Name</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                               <h:inputText type="text" class="form-control" value="#{AccuilController.titleReclamation}"></h:inputText>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Price</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                               <h:inputText type="text" class="form-control" value="#{AccuilController.imageReclamation}"></h:inputText>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Price</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                               <h:inputText type="text" class="form-control" value="#{AccuilController.tel}"></h:inputText>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Price</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                            <h:inputText  class="form-control" type="date"   value="#{AccuilController.dateReclamation}"><f:convertDateTime pattern="yyyy-MM-dd"/> </h:inputText>
+                                                               
+                                                            </div>
+                                                        </div>
+                                                            <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Price</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                               <h:inputText type="text" class="form-control" value="#{AccuilController.textReclamation}"></h:inputText>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Price</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                               <h:inputText type="text" class="form-control" value="#{AccuilController.numberEmployee}"></h:inputText>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                          <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Price</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                               <h:inputText type="float" class="form-control" value="#{AccuilController.cost}"></h:inputText>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        
+                                                        
+                                                        
+                                                   
+                                                        
+                                                        
+                                                        
+                                                      
+                                                       
+                                                    <center>
+                       <h:commandButton value="Edit"  class="btn btn-success" action="#{AccuilController.updateIng()}" /> 
+                                                        </center>
+                                                       
+                                                        </h:form></h:panelGroup>
+                                                      
+                                                    
+	</ui:define>
+	</ui:composition>
