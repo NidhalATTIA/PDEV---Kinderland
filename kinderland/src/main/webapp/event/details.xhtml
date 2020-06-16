@@ -1,0 +1,72 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+		<!--BEGIN : TP1 JSF Introduction Login -->
+		<h:panelGroup>
+			<h:form>
+
+|
+<h:commandLink value="Déconnexion"
+					action="#AccuilController.doLogout()}" />
+			</h:form>
+		</h:panelGroup>
+		<h:panelGroup columns="1">
+			<h:form>
+				<table>
+	
+
+					<tr>
+						<td><h:outputText value="Id"></h:outputText></td>
+						<td><h:outputText  value="#{AccuilController.event.idEvent}"></h:outputText ></td>
+					</tr>
+						<tr>
+						<td><h:outputText value="Event Title"></h:outputText></td>
+                 <td><h:outputText  value="#{AccuilController.event.titleEvent}"></h:outputText ></td>				
+                 	</tr>
+                 	
+                 	   			
+                 	<tr>
+						<td><h:outputText value="Event Description"></h:outputText></td>
+                 <td><h:outputText  value="#{AccuilController.event.descriptionEvent}"></h:outputText ></td>				
+                 	</tr>		
+					<tr>
+						<td><h:outputText value="Event Picture"></h:outputText></td>
+                 <td><h:outputText  value="#{AccuilController.event.photoEvent}"></h:outputText ></td>				
+                 	</tr>
+              
+                 	<tr>
+						<td><h:outputText value="Event Date"></h:outputText></td>
+                 <td><h:outputText  value="#{AccuilController.event.dateEvent}"></h:outputText ></td>				
+                 	</tr>
+                 	
+                 	<tr>
+						<td><h:outputText value="Event's Number of places"></h:outputText></td>
+                 <td><h:outputText  value="#{AccuilController.event.nbr_places}"></h:outputText ></td>				
+                 	</tr>
+
+
+
+
+                 	<tr>
+                 	<td>
+                 	<h:form>
+             
+                
+							
+							
+                 </h:form>
+			</td>
+			</tr>
+				
+		
+
+				</table>
+				
+			</h:form>
+		</h:panelGroup>
+	</ui:define>
+</ui:composition>
